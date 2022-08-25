@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viewport</title>
+
+</head>
+
+<body>
+    <input id="yourId" type="text" placeholder="아이디입력">
+    <input id="yourPassword" type="password" placeholder="비밀번호입력">
+    <input id="rePassword" type="password" placeholder="비밀번호재입력">
+    <input id="yourEmail" type="text" placeholder="이메일입력">
+    <button onclick="doJoin()">회원가입</button>
+
+</body>
+<script>
+ function doJoin(){
+    var data=document.getElementById('yourId').value;
+    if(data==''){//빈칸체크
+         alert('고객님! 아이디를 입력해주세요~~~!!');
+         document.getElementById('yourId').focus();
+         return false;
+        }
+    
+    var password=document.getElementById('yourPassword').value;
+    if(password==''){
+        alert('고객님! 비밀번호를 입력해주세요~~~!!');
+        document.getElementById('yourPassword').focus();
+        return false;
+    }
+
+    var repassword=document.getElementById('rePassword').value;
+    if(repassword==''){
+        alert('고객님! 비밀번호를 다시 입력해주세요~~~!!');
+        document.getElementById('yourPassword').focus();
+        return false;    
+    }
+    if(password != repassword){
+        alert('달라 달라~');
+        document.getElementById('rePassword').focus();
+        return false;    
+    } 
+
+    var data=document.getElementById('yourEmail').value;
+    if(data==''){
+        alert('고객님! 이메일을 입력해주세요~~~!!');
+        document.getElementById('yourEmail').focus();
+        return false;
+    } 
+
+    alert('회원가입 완료~~!!!')
+ }
+//CAUTION!  
+//자바스크립트는 자유도가 높아서 변수이름 중복을 허용 
+//  자바스크립트는 데이터 타입이 하나
+    var x = 10;
+    var y = '10';
+    if(x==y){
+        console.log('우리는 같아!');
+    }
+    // ==로 하면 x=y라고 뜸(모양이 같으니까)
+    //===로 해야 x는 숫자10 y는 문자10이라는 것 까지 체크
+    else{
+        console.log('우리는 달라!');
+    }
+// ===는 자바스크립트에만 있는 문법!(문자 타입까지 같은지 체크하는 기호!)
+</script>
+</html>
