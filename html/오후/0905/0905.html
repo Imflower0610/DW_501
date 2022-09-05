@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 배열&for문
+    var array=[3,10,8];
+    // 0번째 배열 출력
+    //방법1
+    console.log(array[0]);
+    //방법2
+    var item = array[0];
+    console.log(item);
+
+    var result=0;
+    var item1=array[1];
+    var item2=array[2];
+    result= item1+item2;
+    
+    //for문을 이용해서 배열안에 있는숫자를 모두 더하시오
+    var x=0;
+    for(var i=0; i<array.length; i++){
+       x =x+array[i] 
+    }
+    console.log(x);
+    // x=0+3 => 3
+    // x=3+10 =>13
+    // x=13+8 =.21
+
+    var array1=[2,2,9,2,5];
+    //1. for문을 이용해서 array1에 2가 몇번 있는지 카운팅 하시오
+    var count=0;
+    for(var i=0; i<array1.length; i++){
+        if(array1[i]==2)
+        count++;
+    }
+    console.log(count);
+
+
+    //2.for문을 이용해서 array1에 있는 모든 숫자를 더하는데, 더한 숫자가 10이상이면 break하시오
+    var sum=0;
+    for(var i=0;i<array1.length; i++){
+        sum=sum+array1[i];
+        if(sum>=10){
+            console.log('문제2번');
+            break;
+    }
+    }
+    
+    //3.for문을 이용해서 최댓값을 구하시오
+    var max=0;
+    for(var i=0; i<array1.length; i++){
+        var y=array1[i];   
+        if(max<y){
+            max=y;
+        }
+    }
+    console.log(max);
+
+    //for문을 이용해서 배열 안에 수를 출력
+    for(var i=0; i<array1.length; i++){
+        console.log(array1[i]);
+    }
+
+    //이중 for문도 있긴 한데 잘 안씀
+    for(var i=2; i<=9; i++){//outer-for
+        // 1 2 8
+        console.log('구구단을 시작합니다.'+i+'단 부터 시작!');
+        for(var j=1; j<=9; j++){//inner-for
+            console.log(i+'*'+j+'='+(i*j));
+            //3 4 5 6 7
+        }
+    }
+    console.log(i+'단 종료');
+   
+    
+    for(i=2; i<=5; i++){
+        for(j=1; j<=9; j++){
+            console.log(i+'*'+j+'='+(i*j));
+        }
+    }
+
+    
+</script>
+</html>
