@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //for문을 이용해서 구구단 3단을 완성하시오
+
+    for(i=1; i<10; i++){
+        x=i*3
+        console.log("3*"+i+"="+x);
+    }
+
+    //1~30까지 숫자 출력
+    for(i=1; i<=30; i++){
+        console.log(i)
+        if(i==10){
+            console.log('멈추세요~!!');
+            break;//for문을 멈춘다
+        }
+    }
+    //1부터 30까지 짝수 개수를 구하시오. 짝수가 5개 이상이면 break
+    var a=0;
+    for(i=1; i<=30; i++){
+      if(i%2==0){
+        a++;
+      }
+      if(a>=5){
+        console.log('멈춰~!');
+        break;
+      } 
+    }
+
+
+</script>
+</html>

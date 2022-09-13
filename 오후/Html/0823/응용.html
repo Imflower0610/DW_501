@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 1000px;
+        height: 400px;
+        background-color: #ccc;
+        margin: 120px auto;
+        display: flex;
+    }
+    .col{
+        position: relative;
+        height: 100%;
+        color: #fff;
+        padding: 25px;
+        flex:1
+    }
+    .col:nth-child(1){
+        background-color: #283491;
+    }
+    .col:nth-child(2){
+        background-color: #f14684;
+    }
+    .col:nth-child(3){
+        background-color: #622ef1;
+    }
+    h2{
+        text-align: center;
+        font-size: 22px;
+        font-weight: 800;
+    }
+    .caption{
+        width: 230px;
+        font-size: 12px;
+        margin-top: 28px;
+        display: none;
+        /* 안보이게 해줌 */
+    }
+    .caption button{
+        border: 1px solid #fff;
+        border-radius: 30px;
+        outline: none;
+        color: #fff;
+        padding: 8px 18px;
+        background: transparent;
+        /* 배경색을 투명하게 */
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 12px;
+       
+    }
+    .col:hover .caption{
+        display: block;
+        /* none의 반대가 block */
+    }
+    .col img{
+        width: 200px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        /* 부모태그 position: relative
+            자식태그 position:absolute
+            자식태그가 부모태그 안에서 위치 조정 */
+    }
+    .col:hover{
+        flex-grow: 2.5;
+    }
+    .col:hover h2{
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h2>크로스핏</h2>
+            <div class="caption">
+                <p>크로스핏은 정신과 체력싸움이다.</p>
+                <button>Know More</button>
+            </div>
+            <img src="img1.png">
+        </div>
+        <div class="col">
+            <h2>크로스핏</h2>
+            <div class="caption">
+                <p>크로스핏은 정신과 체력싸움이다.</p>
+                <button>Know More</button>
+            </div>
+            <img src="img2.png">
+        </div>
+        <div class="col">
+            <h2>크로스핏</h2>
+            <div class="caption">
+                <p>크로스핏은 정신과 체력싸움이다.</p>
+                <button>Know More</button>
+            </div>
+            <img src="img3.png">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+    /* 전체영역
+너비 600
+높이 자동
+바깥여백 위 100 */
+
+#view_box{
+    width: auto;
+    margin-top: 100px;
+}
+#view_wrap{
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+/* 제목영역
+글자크기 20 */
+#title{
+    font-size: 20px;
+}
+
+/* 이미지영역
+이미지크기 최대 너비 600*/
+
+#image{
+    width: 600px;
+    height: auto;
+}
+#image img{
+    max-width: 600px;
+}
+
+/* 메뉴영역
+너비80 높이30
+간격 20
+배경색 검정 글자색 흰색*/
+#bt{
+    display: flex;
+    height: 30px;
+    width: 300px;
+}
+#bt a{
+    width: 80px; 
+    text-align: center;
+    line-height: 30px;
+    margin-right: 20px;
+    display: block;
+    background-color: black;
+    color:white;
+}
+

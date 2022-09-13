@@ -1,0 +1,8 @@
+/*img{
+    float: left;
+}*/
+#box{
+    display: flex;
+    width: 600px;
+    flex-wrap: wrap;
+}

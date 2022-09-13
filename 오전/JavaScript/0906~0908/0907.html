@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script type="text/javascript">
+var num=10; //변수 중복 성언 가능, 변수값 재할당 가능
+            // 재할당?= 다른 값을 넣어줄 수 있다.
+let kor=90; //중복선언 불가, 변수값 재할당 가능
+
+//전역변수 : 현재 스크립트 파일 내에서 어디서든 사용가능한 변수
+//지역변수 : 자신이 선언된 위치에서만 사용가능
+var b=111;//전역변수
+for(i=0; i<=10; i++){
+let i=10;//지역변수
+a=b+10;
+var c=20;
+}
+
+
+const pi=3.14; //변수 선언과 초기화를 동시에 진행, 중복선언 불가, 변수값 재할당 불가능
+// const 불변의 값
+// const 여기에 저장된 값 변경하지 마라
+// 선언 : pi라는 이름으로 변수를 사용하겠다.
+// var, let으로 변수를 선언하고 초기화 이후에 다른 값을 저장 할 수 있다.
+// const로 변수를 선언하고 초기화 이후에 다른 값 저장 불가(상수).
+
+var num = prompt("숫자입력 : ");
+//웹에서 입력하는 모든 값은 문자열이기 떄문에
+document.write( num + 10);
+//웹에서 입력하는 문자열 숫자와 10이 함께 출력됨
+document.write( typeof(num) );
+//num의 type을 알려줌 문자열(string)인지 숫자(number)인지
+
+//문자열을 숫자열로 바꾸는 방법
+//1. Number(문자열) 2. parsenInt(문자열)
+//()안에는 숫자로 변환할 문자열 입력
+//var num = Number(prompt("숫자입렵 : "));//웹 입력받기 - 문자열값
+var num = parseInt(prompt("숫자입렵 : "));
+//number는 숫자가 아닌게 있는 경우 오류가 나고 persentInt는 가장 앞에 숫자가 오지 않는 경우에만 오류가 남
+//number(2022년)-> 오류, number(100a)->오류
+//parseInt(2022년)->2022, parseInt(100a)->110
+var num2 = 100;
+document.write(num+10);
+
+var num = prompt("숫자입력:");
+alert("숫자변환가능? : " + isNaN(num));
+//isNaN : true면 숫자변환불가, false면 숫자 변환 가능
+
+//국어, 수학, 영어, 역사 점수를 입력 받아서 총점과 평균 구하여 출력
+//국어, 수학, 영어, 역사, 총점, 평균
+</script>
+</head>
+<body>
+    
+</body>
+</html>

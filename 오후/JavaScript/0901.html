@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //배열
+    //[] : 배열(array)
+    var array=['바나나', '딸기', '사과', '수박'];
+//같은말
+    //var banana = '바나나';
+    //var apple = '사과';
+    //var str = '딸기';
+    console.log('배열을 출력하겠습니다.');
+    console.log(array[0]);
+    console.log(array[1]);
+    console.log(array[2]);
+    console.log(array[3]);
+    console.log('배열 길이는:'+array.length)
+
+    //배열은 for문과 같이 사용한다
+    //for문을 이용해서 배열 출력하기
+    console.log('for문을 이용해서 배열을 출력하겠습니다.');
+    for(var i=0; i<array.length; i++){
+       var x=array[i];
+       console.log(x);
+    }
+    console.log('출력을 종료합니다.')
+
+    //for문 이용해서 배열 짝수 갯수 구하기
+    var array2 = [1,4,8,10];
+    var c=0;
+    for(i=0; i<array2.length; i++){
+      var x=array2[i];
+      if(x%2==0){
+        c++
+      }
+    }
+    console.log(c);
+    
+
+    </script>
+</html>

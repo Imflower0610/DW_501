@@ -1,0 +1,35 @@
+#write_front{
+    margin: 100px;
+}
+.input_box{
+    display: flex;
+}
+
+div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#d{
+    width: 400px;
+}
+.a{
+    display: flex;
+   
+}
+.content{
+    width: 800px;
+    height: 400px;
+    resize: none;
+}
+#summer{
+    width: 800px;
+    height: 400px;
+    resize: none;
+}
+.text{
+    width: 100px;
+
+}
+#date{
+    width: 200px;
+}

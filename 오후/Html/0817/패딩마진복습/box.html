@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /* 브라우저마다 기본적으로 제공되는 margin과 padding의  */
+    input{
+        padding-left: 10px;
+        padding-top: 20px;
+        margin: 100px;
+    }
+    .box1{
+        width: 100px;
+        height: 150px;
+        background-color: pink;
+        margin: 200px 100px ;
+        /* margin: 100px;(위 아래 ) auto(왼쪽 오른쪽)
+        padding은 auto가 없다 */
+    }
+    .test-box{
+        margin-bottom: 50px;
+    }
+    
+</style>
+</head>
+<body>
+    <input type="text" value="안녕하세요">
+    <input type="text" value="안녕하세요~~">
+    <h3>div 태그로 margin 알아보기</h3>
+    <div class="box1">
+        <!-- div.test-box 치고 enter치면 자동으로 class 생김 -->
+        <div class="test-box">초코우유</div>
+        <div class="test-box">바나나우유</div>
+    </div>
+</body>
+</html>

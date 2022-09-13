@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .container{
+        /* 이제부터 container 이름을 가진 div는 flex야*/
+        display: flex;
+        /* flex-direction:아이템을 가로가 아닌 세로로 배치 */
+        flex-direction: column;
+        /* justify-content: 컨테이너 안에 있는 아이템 위치조정 
+        space_around:사이사이간격 space-between:사이간격*/
+        justify-content: space-between;
+        width: 500px;
+        height: 200px;
+        border: 1px solid black;
+    }
+    .item01{
+        background-color: aquamarine;
+        flex-basis: 30%;
+        /* flex-basis : 아이템 크기조절 */
+    }
+    .item02{
+        background-color: beige;
+    }
+    .item03{
+        background-color: cornsilk;
+    }
+    .cat{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: 100px;
+        background-color: purple;
+    }
+    .cat1{
+        background-color: peru;
+        flex-basis: 20%;
+    }
+    .cat2{
+        background-color: peru;
+        flex-basis: 20%;
+    }
+    .cat3{
+        background-color: peru;
+        flex-basis: 20%;
+    }
+</style>
+</head>
+<body>
+    <!-- flex는 컨테이너와 아이템으로 구성됨 -->
+    <div class="container">
+        <div class="item01">아이템1</div>
+        <div class="item02">아이템2</div>
+        <div class="item03">아이템3</div>
+    </div>
+
+    <div class="cat">
+        <div class="cat1"></div>
+        <div class="cat2"></div>
+        <div class="cat3"></div>
+    </div>
+</body>
+</html>

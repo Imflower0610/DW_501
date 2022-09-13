@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var x=20;//x라는 이름을 가진 변수 생성
+    x=20;// x라는 변수 재활용
+    x=20;   //자바스크립트가 허용하는 문제점
+            //원래는 변수이름을 중복해서 선언할 수 없다.
+    let y1 =10;
+    let y2 =10;//똑같이 y로 쓰면 오류 why? 변수이름 중복 생성
+
+    //for & 배열 무한반복!!
+    //1부터 30까지 출력하시오, for문 사용
+    for( var i=0; i<=30; i++){
+        console.log(i);
+    }
+    var array=[5,10];
+    var a= array[0]+array[1];
+    console.log(a);
+
+    var array=[2,4,9,10];
+    //for문을 이용해서 짝수만 출력하기
+    
+    for(i=0;i<array.length; i++){
+        if(array[i]%2==0){
+            console.log(array[i])
+        }
+    }
+    
+
+</script>
+</html>

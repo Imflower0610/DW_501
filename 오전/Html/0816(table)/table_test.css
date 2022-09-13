@@ -1,0 +1,109 @@
+/* table_test.css */
+
+/* id가 one을 가진 태그와 하위태그인 td에 style 적용 */
+#one td{
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+}
+#two td{
+    border: 3px solid red;
+    width: 200px; /* 같은 테이블이에서는 가장 큰 너비값을 모두가 갖게된다 */
+    height: 80px;
+}
+#three td{
+    border: 1px solid blue;
+    height: 30px;
+}
+
+/* hover= 마우스가 해당위치에 올라와있는 상태 */
+#one:hover td{
+    border: 3px solid green;
+}
+/* id가 one인 태그 위에 마우스가 올라오면, 
+해당태그의 하위태그인 td에 style을 적용하겠다. */
+#two:hover td{
+    background-color: pink;
+}
+.color{
+    border: 1px;
+    width: 50px;
+    height: 50px;
+}
+.black{
+    background-color: black;
+    color: white;
+}
+.blue{
+    background-color: blue;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.color_box td{
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+}
+.black:hover{
+    background:white;
+    color: black;
+}
+/* 
+corlor_box에 12가지 색상을 표현
+각 칸마다 서로 다른 색으로 표현
+
+실행순서
+1. 각 칸에 지정할 색 이름 작성
+2. 각 칸에 마우스를 올려주면 배경색으로 지정된 색으로 변경
+*/
+.red_:hover{
+    background-color: red;
+}
+.orange:hover {
+    background-color: orange;
+}
+.yellow_:hover{
+    background-color: yellow;
+}
+.green_:hover{
+    background-color: green;
+}
+.blue_:hover{
+    background-color: blue;
+    color: white;
+}
+.darkblue:hover{
+    background-color: darkblue;
+    color: white;
+}
+.purple:hover{
+    background-color: purple;
+    color: white;
+}
+.black_:hover{
+    background-color: black;
+    color: white;
+}
+.pink:hover{
+    background-color: pink;
+}
+.coral:hover{
+    background-color: rgb(255, 100, 80)
+}
+.softpurple:hover{
+    background-color: rgb(183, 145, 218);
+}
+.skyblue:hover{
+    background-color: skyblue;
+}
+
+.color_box:hover{
+    color: blue;
+}

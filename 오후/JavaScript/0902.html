@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var array=[10,4,8,19,20];
+    console.log(array[1])
+    var x=array[1];
+        if(x==4){
+            console.log("x는 "+x+"입니다.")
+        }
+        // if(x==20){
+            // console.log("x는 "+x+"입니다.")
+        // }
+        console.log(array[4]);
+
+        var size= array.length;//배열길이를 size라는 변수에 대입
+        console.log(array[size-1]);//무조건 배열에 마지막이 출력
+
+        //배열하고 for문은 친구
+ //for문을 이용해서 배열안에 있는 값을 출력하시오.
+    var array=[10,4,8,19,20]
+        for(i=0; i<array.length; i++){
+            console.log(array[i]);
+        }
+ //for문을 이용해서 오리지널 도넛이 몇개 들어있는지 출력하시오
+    var donut=['오리지널 도넛','오리지널 도넛', '오리지널 도넛', '초코 도넛'];
+        var x=0;
+        for(var i=0; i<donut.length; i++){
+            if(donut[i]=='오리지널 도넛'){
+                x++;
+            }
+        }
+        console.log(x);
+    var cafe=['스타벅스 터미널점','스타벅스 대흥점','스타벅스 둔산점'];
+    //스타벅스 대흥점이 몇번째에 있는지 for문을 이용해서 출력
+        for(var i=0; i<cafe.length; i++){
+            if(cafe[i]=='스타벅스 대흥점'){
+                console.log('스타벅스 대흥점은 '+i+"번에 있습니다!!");
+                break;
+            }
+        }
+    //for문을 이용해서 전사,마법사, 도적 각 몇명인지
+     var character=['전사', '전사','전사','마법사','마법사','도적','도적'];
+     var x=0;
+     var y=0;
+     var z=0;
+        for(var i=0; i<character.length; i++){
+            if(character[i]=='전사'){ x++}
+            if(character[i]=='마법사'){ y++}
+            if(character[i]=='도적'){ z++}
+            // if else라는 문법이 있지만, 클린한 코드를 위해서 if만 사용하자
+        }
+        console.log('전사는 '+x+"명, 마법사는 "+y+"명, 도적은 "+z+'명입니다.')
+//배열안에 있는 10하고 20더한 값을 출력하시오(for문 사용x)
+        var num=[10,20];
+        var plus=num[0]+num[1]
+        console.log(plus);
+//for문 사용하지말고 10,20,30 모두 더하기
+        var a=10;
+        var b=20;
+        var c=30;
+        console.log(a+b+c)
+</script>
+</html>
