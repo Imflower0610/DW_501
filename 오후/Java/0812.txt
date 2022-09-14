@@ -1,0 +1,49 @@
+0812 오전
+
+* html에서 표 만들기
+	1. 몇줄 몇칸으로 만들것인지 정하기
+	2. table 태그 작성
+	3. 정해진 줄 수만큼 tr 만들기
+	4. tr안쪽으로 정한 칸만큼 td 만들기
+
+  <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+*style
+<style>
+    p{font-size: large; }
+    
+    table tr td{ border: 1px solid black;
+    width: 200px; 
+    height: 300px;
+    }
+
+</style>
+
+css파일 따로 만들어서
+<link rel="stylesheet" type="text/css" href="css파일명">으로 연결
+표의 외곽선(border) 밖 여백을 margin, 안쪽 여백을 padding
+
+
+----------------오후수업----------------
+MD(Mark Down)파일 
+	* html
+	* txt
+	* (확장명)
+	* md
+	* java
+특징
+1. 실무에서 많이 사용하는 파일
+2. 메모장이랑 같으나 기능들이 많다.
+3. 깃허브랑 많이 사용된다.
+
+윈도우+. =이모지
+~~~java
+~~~
+

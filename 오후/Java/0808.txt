@@ -1,0 +1,173 @@
+오전시간
+
+http 프로토콜
+
+7layer
+
+tcp/ip 4계층
+
+tcp udp
+세션 - 접속유지
+표현 - jpg, png, mp4, 문자코드
+애플리케이션 - http, ftp, ssh 등
+
+도메인 dns
+dns서버 - 도메인 이름과 ip연결
+	1. 내컴퓨터 브라우저에서 naver.com 입력
+	2. 연결된 통신사 dns서버에 전달
+	3. 통시사 dns서버에서 naver.com 검색
+	4. 검색 결과 없으면 루트 dns서버에 전달
+	5.루트 dns서버에서 닷(.) 도메인 확인하여 최상위 dns서버에 전달
+	6. 내컴퓨터에 naver.com의 ip주소 전달
+	7. 받은 ip주소로 이동하여 페이지 요청
+    처음 한번만 이렇게 되고 그 다음부터는 ip주소가 저장되서 바로 접속됨
+
+웹사이트 접속
+프로토콜 - http
+사이트 주소 - (문자) naver
+도메인 - .com
+포트 - :80
+
+프로토콜 - 통신규약
+도메인  - 웹 영역
+
+html
+	<!-- -->
+	<!-- html 주석 : 메모기능 프로그램 실행에 영향 없음 -->
+	주석으로 왜 그 프로그램을 만들었는지 메모
+
+	<b>___</b> 굵게
+	= <strong>강조</strong> 강조
+	
+	___<br> 엔터
+
+	<h>____</H> 제목태그 : 일정 양식 적용됨
+	<p>___</p> 일반태그 : 양식 없음
+	<table> 표만들기 태그
+		<tr>  줄표현 태그(4줄이면 <tr> 네번)
+		     <td></td> 칸표현 태그 (두칸이면 <td></td>두번)
+		     <td></td>
+		</tr>
+	</table> 
+		ex)1 2  모양의 표를 만들고 싶을 때
+		    3 4
+		    5 6
+		    7 8
+
+		<table border="1">----border=테두리
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+	
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		
+			<tr>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+	
+			<tr>
+				<td>7</td>
+				<td>8</td>
+			</tr>
+		
+		</table>
+
+css
+	<p style='color:#D1B2FF; font-size:18pt'> 글자모양 </p>
+	<p style='color:rgb(165,102,255); font-size:18pt'> 글자모양 </p> - javascript에 유리
+	<font size='10' color='pink' face='굴림'> 2+3 </font>
+	*이클립스에서는 태그 클릭하고 properties 보면 폰트에 사용가능한 거 알려줌
+	
+html에서는 엔터 적용이 안됨 무조건 <태그>로 해야됨
+띄어쓰기도 마찬가지
+
+* html, css, javascript 는 필수적으로 알아야 front-end(우리 눈에 보이는 웹페이지)를 구성할 수 있음
+* java는 우리눈에 안보이는 back-end
+
+
+오후시간
+
+1. 자바에서 클래스이름은 영어대문자로 시작한다
+Java0808
+
+2. 변수와 데이터<--프로그래밍 기초
+변수는 데이터를 담는 그릇
+데이터는 그릇에 넣을 시리얼
+
+데이터 종류 : int(숫자), String(문자), double(소수), boolean(참, 거짓)......
+변수 : 별칭을 의미함
+
+
+public class Java0808 {
+
+	public static void main(String[] args) {
+		int number = 50;
+		System.out.println(number);
+			//<--주석
+			//(주석) int는 데이터타입이고 age는 변수이름이다.
+			//데이터 타입은 정해져있다 이름변경 불가능.
+			//변수이름은 자유롭게 수정 가능.
+			//프로그래밍에서 = 같다가 아니라 대입을 의미함.
+			//데이터타입이 int(숫자)이기 때문에 숫자만 대입할 수 있다.
+
+		//문제1. 데이터타입은 int 변수이름은 money라고 마늘고
+		//500을 대입하시오.
+		int money = 500;
+			//마지막에 ;을 찍어야 컴퓨터가 코드를 실행할 수 있다.
+		System.out.println(money);//출력
+			//저장(Ctrl+s)->>실행(Ctrl+F11)
+		String 이름 = "김지연";//데이터타입 String(문자)
+		System.out.println("당신 이름은 ?"+이름);
+		String 사는곳 ="대전";
+		System.out.println("제가 사는 곳은 ?"+사는곳);
+			//문제2. 데이터타입 String 변수이름 취미
+			//취미데이터를 대입 후 출력!
+		
+		String 취미 ="퍼즐";
+		System.out.println("취미는 ?"+취미);
+		
+			//프로그래밍을 위에서 아래로 해석한다.
+		int x = 10;//x라는 변수를 선언(x라는 이름은 한번썼으니 중복이 안됨)
+		System.out.println("x의 값은?"+x);
+		x=20;	//기존에 있던 10은 없어지고 20이 들어간다.
+		System.out.println("x의 값은?"+x);
+			//문제3. 아래 예상되는 결과를 메모창에 작성하시오
+		x=50;
+		System.out.println("x의 값은?"+x); 50
+			//정답50 컴퓨터는 위에서 아래로 읽기 때문에 최종적으로 50이 됨
+			//대입은 기존 데이터를 무시하고 새로운 데이터를 넣을 수 있다.
+			// '=' <= 대입연산자
+			///+,-,/(나누기 몫값),%(나누기 나머지값),=(대입) 연산자 종류
+		
+		int a = 5; // 5를 데이터타입 int a변수에 대입
+		int b = 10;// 10을 데이터타입 int b변수에 대입
+		int c = a+b;// a와 b를 더한 값은 데이터타입 int c변수에 대입
+		System.out.println("최종값은? "+c);
+			//문제 4. 10-7을 구현하는 로직을 아래 작성하시오
+		int d = 10;
+		int e = 7;
+		int f = d-e;
+		System.out.println("최종값은?"+f);
+		
+	}
+}
+
+		문제5
+		int a = 5;
+		int b = a;
+		System.out.println(b);
+			b=5
+		문제6
+		int a = 2;
+		a = a;//
+		a = a * a;///
+		int b = a;
+		System.out.println(b);
+			b=4
+
+
