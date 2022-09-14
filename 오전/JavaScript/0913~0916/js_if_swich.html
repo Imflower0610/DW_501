@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/JavaScript">
+//랜덤함수 Math.floor(Math.random())
+//Math.floor : 소수점 자리 제거 Math.floor(2.14,2) => 2.1
+//Math.random() : 랜덤함수 0.00000.....~0.9999..... 중 랜덤값
+
+//문제1 가위바위보
+//1. 가위 2. 바위 3. 보
+//컴퓨터와 가위바위보를 해서 내가 승, 패 , 무, 출력
+//내가 푼거
+    var user = parseInt(prompt("1. 가위 2. 바위 3. 보"));
+    var com = Math.floor(Math.random()*3)+1;
+
+    if(user==1&&com==3 || user==3&&com==1){
+        if(user>com){document.write("유저 패")}
+        else{document.write("유저 승")};
+    }else{
+        if(user>com){document.write("유저 승")}
+        else if(user<com){document.write("유저 패")}
+        else{document.write("무승부")};
+    }
+//답
+    var user = parseInt(prompt("1. 가위 2. 바위 3. 보"));
+    var com = Math.floor(Math.random()*3)+1;
+
+    if(user==com){
+        document.write("비김");
+    }else if((user==1&&com==3) || (user==2&& com==1)||(user==3%%com==2)){
+        document.write("나의 승");
+    }else{document.write("나의 패배");}
+
+// 문제2. 주차장 요금
+// 주차장 기본요금 : 1000원(1000원에 기본시간 30분) 
+// 10분당 100원 추가 요금
+// 2시간 이상 주차시 기본요금 1700원으로 변경 (2시간에 1700원)
+// 4시간 이상 주차시 기본요금 2700원으로 변경 (4시간에 2700원)
+// 8시간 이상 주차시 주차요금은 5000원(추가요금 없음)
+
+// 주차시간을 입력받아 요금 구하기(주차시간은 시간, 분 따로 입력)
+// 예) 주차시간 2 34 => 2시간 34분 주차
+// 2시간 34분 주차 요금 = 2000원
+// 1시간 5분 주차 요금 = 1300원
+// 31분 주차요금 = 1000원
+// 6시간 29분 추자요금 = 4100원
+
+var cost = 1000;// 주차장 기본요금 
+var add = 100;
+var hour = parseInt(prompt("주차시간(시)"));
+var min = parseInt(prompt("주차시간(분)"));
+var total_time = (hour*60)+min;
+if(hour >= 8){
+    cost=5000;
+    total_time=0;
+}
+else if(hour >= 4){
+    cost=2700;
+    total_time = total_time - 240;
+}
+else if(hour >= 2){
+    cost=1700;
+    total_time = total_time - 120;
+}
+else if(total_time >= 30){
+    total_time = total_time - 30;
+}
+
+var price = cost + (parseInt(total_time/10)*100);
+price = (hour==0) && (min<=30)? cost : price;
+
+document.write('주차요금 :' + price + ' 원');
+
+// var [hour, min] = prompt("시간을 입력하세요").split(" ");
+
+// if문 : 조건식의 참(true), 거짓(false)에 의해서 동작
+// if문에 사용될 조건식은 범위가 큰것부터 조건식 작성
+// 조건식 만들기 어렵다면 노트에 작성
+// if문은 가정 하에 만들어야 한다.
+
+// 바이킹 탑승 키제한 150이상 190이하
+//  만약 내가 키를 145라고 입력한다면 조건식은 어떻게?
+var tall = parseInt(prompt("키를 입력하세요"));
+if(tall>=150&&tall<=190) document.write("탑승가능");
+else document.write("탑승불가능");
+
+//인적사항 - 직업이 학생일경우 현재 재학중 학교이름 작성
+var name = prompt("이름");
+var addr = prompt("주소");
+var email = prompt("이메일");
+var job = prompt("직업");
+var school;
+if(job=="학생"){school = prompt("재학중인 학교이름");}
+
+// //핸드폰번호 입력 - 없이 입력
+// //참 거짓 표현 함수 : contain
+var 폰 = "010-1234-1234";
+
+if(폰.indexOf('-')!=-1){
+    alert('-없이 입력하세요');
+}
+
+// switch와 if문 차이점
+// if문은 참과 거짓에 의해서 동작
+// switch문은 선택에 의한 동작
+// switch문에서는 참과 거짓의 결과가 나오는 조건식을 사용하지 않는다.
+// switch문은 가장 큰 조건문 작성에 사용된다.
+// 메뉴, 키보드, 마우스, 프로그램 창 이동ㅇ
+
+// switch (조건) {
+//     case newfile :
+//     case save :
+//     case open folder :
+//     case exit :
+//     default : (예외적인 상황)}
+
+var num = 25;
+switch (num) {
+    case 5:
+        document.write('5를 선택했다.')
+        break;
+    case 11:
+        document.write('11을 선택했다.')
+        break;
+    case 25:
+        document.write('25를 선택했다.')
+        break;
+    case 10:
+        document.write('10을 선택했다.')
+        break;
+    default:
+        document.write('잘못입력하셨습니다.')
+}
+//switch문에 break 안들어가면 이전결과가 계속 같이 나오기 때문에 break 필수
+//switch문 조건에 일치하지 않는 수 입력시 switch문 실행이 안되기 때문에 이를 처리하기 위해 default가 존재 
+//default는 예외적인 상황 처리(예외처리의 목적은 오류 해결이 아니라 오류가 나도 프로그램이 종료되지 않으므로 오류를 회피하는것이 목적)
+</script>
+</html>
