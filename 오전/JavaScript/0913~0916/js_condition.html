@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        2. 계층 구조
+
+        ┌  Window  ┬  Document    ┬ Form ─────┬ Text 
+        │          ├  Location    ├ Link      ├ Textarea
+        │          ├  Frame       ├ Image     ├ Fileupload
+        │          └  History     ├ Anchor    ├ Password
+        │                         ├ Applet    ├ Hidden
+        │                         ├ Layer     ├ Submit
+        │                         └ Area      ├ Reset
+        │                                     ├ Radio
+        │                                     ├ Checkbox
+        │                                     ├ Button
+        │                                     └ Select
+        │
+        ├  Navigator ┬ Plug-in
+        │            └ MimeType
+        │
+        ├  Screen
+        │
+        └  Event
+     -->
+
+    <input type="text" name="num" id="num"/>
+    <button type="button" onclick="data_push()">입력</button>
+    <hr/>
+    <div id="result"></div>
+</body>
+
+<script type="text/javascript">
+    
+    // document.getElementById("num");
+    // document.getElementsByClassName("클래스명");
+    // document.getElementsByName("name명");
+    // document.getElementsByTagName("태그명");
+
+    // document.querySelector("#num");
+    // document.querySelector(".클래스명");
+    // document.querySelectorAll(".클래스명");
+    // document.querySelectorAll("태그명");
+    // document.querySelectorAll("[name명]");
+
+    //id로 태그 가져올때는 그냥 가져와도 되지만, class는 생각하고 가져올것!
+
+function data_push(){
+    var number = document.getElementById("num");
+    var val = parseInt(number.value);
+    var res = document.getElementById('result');
+    res.innerHTML= val;
+//입력값이 짝수인지 홀수인지
+ if(val%2==0){
+    res.innerHTML= "짝수입니다.";
+ }
+ else{
+    res.innerHTML= "홀수입니다.";
+ }
+}
+</script>
+
+</html>
