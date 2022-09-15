@@ -17,7 +17,7 @@ public class For문 {
 //		System.out.println(i); 
 		//i는 for문 끝낼때 같이 끝남으로 따로 i를 빼서 정해주면 사용가능
 		
-		Scanner scan = new Scanner(System.in);
+		Scanner	scan = new Scanner(System.in);
 		System.out.println("값을 입력해주세요 => ");
 		int num = scan.nextInt();
 		System.out.println("값은"+num);
