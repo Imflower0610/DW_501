@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #input_wrap{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+    #input_wrap input{
+        height: 40px;
+        font-size: 1.7rem;
+        /* rem : 현재 html에 설정되어있는 font사이즈의 1.7배 만큼 증가한 것(폰트 설정 안되어 있으면 기본폰트 기준) */
+    }
+
+</style>
+<script>
+// 두개의 숫자를 입력받아 두숫자중 큰숫자를 출력하시오
+// 내가 푼 것
+//     function execute(){
+
+//     var number1=document.getElementById("number1");
+//     var num1=parseInt(number1.value);
+//     var number2=document.getElementById("number2");
+//     var num2=parseInt(number2.value);
+
+//     if(num1>num2)document.write( num1+"이 더큽니다");
+//     else if(num1<num2) document.write(num2+"이 더큽니다");
+//     else document.write("비겼습니다.")
+// }
+
+//정답
+function execute(){
+    var num1 = document.getElementById('number1');
+    var num2 = document.querySelector('#number2');
+    var res = document.getElementById('result');
+    if(parseInt(num1.value)>parseInt(num2.value)){
+        res.innerHTML="<h2> 큰숫자 :"+num1.value+"</h2>";
+    }
+    else{res.innerHTML="<h2> 큰숫자 :"+num2.value+"</h2>";}
+}
+</script>
+
+</head>
+<body>
+    <div id="input_wrap">
+        <input type="text" id="number1" placeholder="정수입력">
+        <input type="text" id="number2" placeholder="정수입력">
+        <input type="button" onclick="execute()" value="입력">
+    </div>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

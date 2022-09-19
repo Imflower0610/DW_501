@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../../image/1.jpg" alt="" id="mimg">
+    <!-- ../은 상위폴더 의미함 -->
+    <div>
+        <button onclick="start()">시작</button>
+        <button onclick="end()">종료</button>
+        <button onclick="pre()">이전</button>
+        <button onclick="next()">다음</button>
+        
+    </div>
+</body>
+<script>
+    var idx =1;
+    function pre(){
+        idx--
+        if(idx==0)idx=4;
+        var img=document.getElementById("mimg");
+        img.src='../../image/'+idx+'.jpg';
+    }
+    var set=0;
+    function next(){
+        idx++
+        if(idx==5){idx=1;}
+        var img=document.getElementById("mimg");
+        img.src='../../image/'+idx+'.jpg';
+    }
+    function start(){
+        // while(true){//끝없이 반복
+        set = setInterval(function(){
+            idx++;
+            if(idx==5) idx==1;
+        
+            var img = document.getElementById('mimg');
+            img.src='../../image/'+idx+'.jpg';
+        },1000);
+    }
+    function end(){
+        clearInterval(set);
+    }
+</script>
+</html>
