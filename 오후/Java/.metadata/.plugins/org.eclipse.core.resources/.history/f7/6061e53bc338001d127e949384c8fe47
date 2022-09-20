@@ -62,35 +62,43 @@ public class 메소드공부4 {
  * 단 주어진 수가 1인 경우에는 0을
  * 작업을 500번 반복할때까지 1이 되지 않는다면 -1을 리턴에주세요
  * hint(while사용)
- * long=8바이트 int=4바이트(2^32 넘어가면 표현X)
+ * long=8바이트 int=4바이트
  */
-	public static long solution(long n) {
-		long answer =0;
-		if(n==1) answer=0;
-		while(n>1) {
+//	public static long solution(long n) {
+//		long answer =0;
+//		if(n==1) answer=0;
+//		while(n>1) {
+//			if(n%2==0) {
+//				n=n/2;
+//				answer++;
+//
+//			}
+//			else if(n%2==1) {
+//				n=n*3+1;
+//				answer++;
+//			}
+//		}
+//		if(answer>=500) answer=-1;		
+//		return answer;
+//	}
+	public static int solution(int n) {
+		int answer =0;
+		while(true) {
 			if(n%2==0) {
 				n=n/2;
 				answer++;
-
+				
 			}
 			else if(n%2==1) {
 				n=n*3+1;
 				answer++;
+				
 			}
+			break;
 		}
 		if(answer>=500) answer=-1;		
 		return answer;
 	}
-/*
- * bit : 표현할 수 있는 수 256
- * byte : 8bit => 1byte
- * KB :
- * MB :
- * GB : 1024GB => 1TB
- * TB :
- */
-	
-	
 	public static void main(String[] args) {
 		// 1. 1~10까지 합
 		// 2. 10까지 짝수를 구하시오
