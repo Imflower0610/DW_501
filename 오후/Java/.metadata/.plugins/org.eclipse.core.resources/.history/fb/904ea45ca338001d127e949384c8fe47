@@ -1,0 +1,44 @@
+package 자바0913;
+
+public class 메소드공부4 {
+
+	/*
+	 * public static : 접근제어자
+	 * String(문자)/int(숫자)/boolean(true/false)/double(소수점) : 리턴타입
+	 * getWorl/getSum: 메소드(혹은 함수 이름)
+	 * String/int x : 파라미터 타입 혹은 매개변수
+	 */
+	public static ing getSum(int x) {
+		return x;
+	}
+	/*
+	 * 메소드 사용하는 이유
+	 * 1. 업무 분담
+	 * 2. 유지보수 편리성 
+	 */
+	
+	/* public static : 접근제어자
+	 * boolean: 리턴타입
+	 * isTrue: 메소드 이름
+	 * 파라미터 값 없음
+	 */
+	public static boolean isTrue() {
+		return true;
+	}
+	
+	
+	public static int getCount(int startNum, int endNum) {
+		//문제1 startNum이 endNum보다 크면 startnum 리턴
+		//endNum이 startNum보다 크면 endNum 리턴
+		if (startNum>endNum)return startNum;
+		else if(endNum>startNum) return endNum;
+	}
+	public static void main(String[] args) {
+		// 1. 1~10까지 합
+		// 2. 10까지 짝수를 구하시오
+	getCount(1,10);//메소드를 불러오다(메소드호출)
+		
+		
+	}
+
+}
