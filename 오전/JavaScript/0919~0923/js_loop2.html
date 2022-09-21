@@ -7,56 +7,86 @@
     <title>Document</title>
 </head>
 <body>
-
-    <div id="result"></div>
-    <hr>
-    <input type="number" id="row">
-    <input type="number" id="col">
-    <button onclick="make()">테이블생성</button>
-    <hr>
-    <div id="result1"></div>
+   
 </body>
-
 <script>
-    // 무한루프 : 무한대로 반복하는 것
-// var k=1;
-// while(true){
-//     document.write('무한반복');
-//     if(k==100)break;
-//     k++;
-// }
-// while(true){
-//     var num = parseInt(prompt());
-//     document.write(num+'<br>');
-//     if(num==0) break;
-// }
-function make(){
-var res=document.getElementById('result1');
-var i=1;
-var out ='';
-out+='<table>';
-while(i<=row.value){
-    out+='<tr>';
-        var k=1;
-        while(k<=col.value){
-            out+='<td>a</td>';
-            k++;
-        }
-    out+='</tr>';
-        i++
-}
-out+='</table>';
-res.innerHTML=out;
-}
-
-</script>
-<!-- 반복문 안에 반복문 또 만들어 사용가능 -->
-<style>
-    table tr td{
-        border: 1px solid black;
-        width: 50px;
-        height: 50px;
-        text-align: center;
+   
+    // 반복문 사용
+    //1~100까지 숫자중 13의 배수만 출력 하시오
+    //document.write()사용하여 출력
+    var k=1;
+    while(k<=100){
+        if(k%13==0) document.write(k+'<br>');
+        k++;//while문 자체가 반복문이라 위치상관 없음
     }
-</style>
+document.write('<hr>');
+
+    // 1~100까지 숫자중 4와 6의 공배수만 출력
+    var i =1;
+    while(i<=100){
+        if(i%4==0 && i%7==0)document.write(i+'<br>');
+        i++;
+    }
+   /*답
+    while(i<=100){
+        if(i%(4*7)==0) document.write(i);
+        i++;
+    }
+    */
+document.write('<hr>');
+   //1~100까지 숫자 중 24의 약수 입력
+   var x=1;
+   while(x<=100){
+    if(24%x==0) document.write(x+'<br>');
+    x++;
+   }
+  /* 답
+   var i=24;
+   while(i>=1){
+    if(24%i==0) document.write(i);
+    i++;
+   }
+   */
+document.write('<hr>');
+// 124와 96의 공약수 출력하기
+var t=1;
+while(t<=124){
+    if(124%t==0 && 96%t==0) document.write(t+'<br>');
+    t++;
+}
+/*
+답
+var num1 =124, num2=96;
+var i=1;
+var small = num1<num2? num1: num2;
+while(i<=small){
+    if(num1%i==0 %% num2%i==0 )document.write(i+'<br>');
+    i++;
+}*/
+document.write('<hr>');
+// 124와 155의 최대 공약수 출력하기
+var num1 =124, num2=155;
+var num =1;
+var result=0;
+var large = num1>num2? num1: num2;
+
+while(num<=large){
+    num++
+    if(num1%num==0 && num2%num==0){
+        if(result<num) result=num;
+    }
+}document.write(result+'<br>');
+
+/*답
+var num1 =124, num2=155;
+var i=num1<num2? num1: num2;
+while(i>=1){
+    if(num1%i==0 && num2%i==0){
+        document.write('최대공약수 : '+i);
+        break;
+    }
+    i--;
+}   
+*/
+</script>
 </html>

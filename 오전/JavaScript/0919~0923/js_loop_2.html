@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="result"></div>
+    <hr>
+    <input type="number" id="row">
+    <input type="number" id="col">
+    <button onclick="make()">테이블생성</button>
+    <hr>
+    <div id="result1"></div>
+</body>
+
+<script>
+    // 무한루프 : 무한대로 반복하는 것
+// var k=1;
+// while(true){
+//     document.write('무한반복');
+//     if(k==100)break;
+//     k++;
+// }
+// while(true){
+//     var num = parseInt(prompt());
+//     document.write(num+'<br>');
+//     if(num==0) break;
+// }
+function make(){
+var res=document.getElementById('result1');
+var i=1;
+var out ='';
+out+='<table>';
+while(i<=row.value){
+    out+='<tr>';
+        var k=1;
+        while(k<=col.value){
+            out+='<td>a</td>';
+            k++;
+        }
+    out+='</tr>';
+        i++
+}
+out+='</table>';
+res.innerHTML=out;
+}
+
+</script>
+<!-- 반복문 안에 반복문 또 만들어 사용가능 -->
+<style>
+    table tr td{
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+    }
+</style>
+</html>
