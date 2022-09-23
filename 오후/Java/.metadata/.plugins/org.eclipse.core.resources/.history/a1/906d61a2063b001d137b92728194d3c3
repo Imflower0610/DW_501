@@ -1,0 +1,28 @@
+package 자바0913;
+
+public class 메소드공부7 {
+
+	public static int getNum(int x, String y) {
+		return 0;
+	}
+	//문제1 아래 메소드 main메소드에 호출해서 결과 확인하가
+	public static int getNum(int x, String y, String z) {
+		return 10;
+	}
+	//문제2 메소드 만들고 메인함수 호출
+	public static boolean isTrue(boolean x, String y) {
+		return false;
+	}
+	
+	
+	public static void main(String[] args) {
+		int x=getNum(10, "붕어빵");//메서드 호출
+		//메소드에 리턴이 있으면 대입이 가능하다.
+		
+		int y=getNum(10, "붕어빵","피자붕어빵");
+	System.out.println(y);
+		boolean isX=isTrue(true, "붕어빵");
+		System.out.println(isX);
+	}
+
+}
