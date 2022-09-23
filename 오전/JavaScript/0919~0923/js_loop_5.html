@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   
+    // for, while
+    //초기값=>조건식=>내용=>증감식=>조건식=>내용=>증감식=<조건식
+    var i=10;
+    while(i<10){
+        alert('while문');
+        i++;
+    }
+
+    // do~while
+    // 초기값=>반복내용 실행=>증감식=>조건식=>내용=>증감식=>조건식
+    var k=10;
+    do{
+        alert('do while');
+        k++;
+    }while(k<10);
+
+// do~while문 작성시 : do 실행 후 while 조건만족시 실행
+    var num=0;
+    do{
+        alert('1~5 중에서 입력');
+        num=parseInt(prompt());
+    }while(!(num>=1&&num<=5));
+    document.write(num);
+
+// while문 작성시 : 조건만족시 실행
+    var num1=parseInt(prompt());
+    while(num1<1||num1>5){
+        num1=parseInt(prompt());
+    }
+    document.write(num1);
+
+</script>
+</html>
