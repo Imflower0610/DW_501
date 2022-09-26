@@ -70,7 +70,13 @@ public class 메소드공부7 {
 			System.out.println("Hello");
 		}
 	}
-	
+	public static int 용돈을드리다(int 용돈금액, String 가족) {
+		가족="아빠";
+		if(가족.equals("엄마")) {return 용돈금액;}
+		가족="엄마";
+		if(가족.equals("아빠")) {return 용돈금액;}
+		return 1000;
+	}
 	public static void main(String[] args) {
 			int x=getNum(10, "붕어빵");//메서드 호출
 			//메소드에 리턴이 있으면 대입이 가능하다.

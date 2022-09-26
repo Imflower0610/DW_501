@@ -1,0 +1,31 @@
+package 자바0926;
+
+// * 클래스 이름을 만들 때는 항상 앞자리가 대문자여야 한다.
+// * 클래스 안에 메소드가 위치한다.
+// * 프로젝트 -> 패키지 -> 클래스 -> 메소드(가장 작은 단위)
+class Pizza{
+/*	접근제어자 : public static
+	리턴타입 : void
+	메소드 이름 : 피자를먹다
+	파라미터 타입 : 값없음
+*/	public static void 피자를먹다(){
+	System.out.println("백종원피자 냠냠");
+}
+/*
+ * 접근제어자 : public static
+ * 리턴타입 : String
+ * 메소드 이름 : 피자를 주문하다.
+ * 파라미터 타입 : String, int
+ */	public static String 피자를주문하다(String 피자이름, int 수량) {
+		return "불고기피자";
+	}
+}
+public class 클래스공부1 {
+	public static void main(String[] args) {
+		
+		Pizza p = new Pizza(); // new Pizza(); pizza 클래스를 불러온 것
+		p.피자를먹다();//pizza클래스 안에 있는 피자를먹다 호출
+
+	}
+
+}
