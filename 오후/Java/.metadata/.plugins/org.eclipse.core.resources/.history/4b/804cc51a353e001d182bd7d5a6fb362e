@@ -1,0 +1,8 @@
+package 자바0927;
+
+public class 영화관 {
+int 직원수;
+String 영화관위치;
+String 영화관이름;
+String[] 개봉영화종류;
+}
