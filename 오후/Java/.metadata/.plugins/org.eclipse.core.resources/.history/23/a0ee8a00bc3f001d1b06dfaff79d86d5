@@ -1,0 +1,46 @@
+package 자바0929;
+
+class A{
+	//기본적응로 제공 == Default
+	A(){
+		//메소드 => 생성자
+		//생성장는 메소드와 다르게 리턴타입이 없다.
+	}
+	public void A클래스에있는메소드() {
+		System.out.println("Hello world");
+	}
+	public int 메소드생성(int x) {
+		return x;
+	}
+}
+class B{
+	//B라는 클래스 생성 후 메인 함수에 B클래스 호출
+	B(){
+		System.out.println("Hello world");
+	}
+}
+
+
+
+
+public class 클래스복습 {
+
+	public static void main(String[] args) {
+		// 메인메소드에서 A클래스에 있는 메소드 호출하기(2분)
+		A a = new A();
+//		newA(); A클래스 호출
+//		A a 불러온 클래스를 a라는 변수에 대입(인스턴스화 하다(==객체를 생성하다))
+		a.A클래스에있는메소드();// 변수를 생성하고 클래스 호출 시 메소드 호출
+		new A().A클래스에있는메소드();
+		
+		A x= new A();
+		x.메소드생성(300);
+	
+		B b = new B();
+		
+	
+	
+	
+	}
+
+}
