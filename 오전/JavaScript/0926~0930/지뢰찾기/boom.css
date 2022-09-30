@@ -22,7 +22,9 @@ table tr td{
     height: 50px;
     width: 50px;
 }
-table tr td img{
-    width: 50px;
-  
+img{
+    width: 46px;
+    /* 폭탄 안보이게 하는 방법    
+    1. display: none;
+    2. opacity: 0; */
 }
