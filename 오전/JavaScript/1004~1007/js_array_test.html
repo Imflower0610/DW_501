@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="input_wrap">
+        <input type="text" name="item_name" id="item_name">
+        <input type="text" name="item_price" id="item_price">
+        <button onclick="enroll()">등록</button>
+    </div>
+    <div id="wrap">
+        <h3>제품 목록</h3>
+        <ul id="item_list"></ul>
+    </div>
+</body>
+<script>
+
+/* 실습
+    제품등록하면서 제품 가격과 함께 등록할 수 있게 만들기
+    제품 가격 입력하는 input 만들어서 등록
+    예 ) 거치대 3000원 삭제
+*/
+var item = new Array();
+function enroll(){
+    var name = document.getElementById("item_name");
+    var prop = name.value;
+    item.push(prop);
+    
+    var price = document.getElementById("item_price");
+
+    var ul = document.querySelector("#item_list");
+   
+        var li = document.createElement('li');// li 태그 생성
+
+        li.innerHTML = item[item.length-1];// li 태그 안에 제품명 삽입
+        //li.innerHTML = item[item.length - 1]+ " "+price.value+"원";
+
+            var b = document.createElement("b");
+            b.innerHTML = price.value + "원";
+            li.appendChild(b);
+
+        var bt = document.createElement('button'); //button 태그 생성
+        bt.setAttribute('class','del_bt'); // 클래스명 부여 
+        bt.setAttribute('onclick','del(this)'); // onclick이벤트 생성
+        bt.innerHTML = '삭제';
+        li.appendChild(bt);
+        ul.appendChild(li)//ul 태그 자식으로 li추가  
+}
+function del(obj){
+    var parent_li = obj.parentNode;
+    var parent_ul = parent_li.parentNode;
+    parent_ul.removeChild(parent_li);
+}
+
+
+</script>
+</html>
