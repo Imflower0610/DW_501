@@ -1,13 +1,15 @@
-###DataBase
-	데이터 저장소
-###
+### DataBase : 데이터 저장소
+	SQL문에서 대문자, 소문자 구별없다
 
-###EMP 테이블
-empno : 사원번호
-ename : 사원이름
-job : 직책
-mgr : 사수번호
-hiredate : 입사날짜
-sal : 급여
-comm : 보너스
-deptno : 부서번호
+### SQL 실행순서
+	from => where => select
+
+### EMP 테이블
+	empno : 사원번호
+	ename : 사원이름
+	job : 직책
+	mgr : 사수번호
+	hiredate : 입사날짜
+	sal : 급여
+	comm : 보너스
+	deptno : 부서번호
