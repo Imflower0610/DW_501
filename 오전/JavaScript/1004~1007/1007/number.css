@@ -1,0 +1,18 @@
+#input_wrap{
+    width: 800px;
+    margin : 0 auto;
+}
+input{
+    width: 100px;
+    height: 30px;
+}
+
+#send{
+    background-color: aqua;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;   
+}
+#send:hover {
+    cursor: pointer;
+}
