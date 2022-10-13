@@ -1,0 +1,79 @@
+
+/* 내가 푼것
+ #form{
+    width: 800px;
+    height: 800px;
+    margin : 0 auto;
+    margin-top: 100px;
+}
+.input_line{
+    position: relative;
+    border-radius: 10px;
+}
+label{
+    position:absolute;
+    right: 720px;
+    top: -30px;
+}
+label:hover{
+    position:none;
+}
+
+#form div input{
+    width: 600px;
+    height: 70px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    padding-left: 20px;
+}
+.input_line input{
+    border-radius: 0px;
+    border: 0;
+    border-bottom: 5px solid blue;
+}
+#bt{ width: 600px;
+    height: 80px;font-size: 40px;
+    border-radius: 20px;
+    border: 5px solid aqua;
+} */
+
+#form{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+}
+.input_line{
+    width: 90%;
+    margin: 0 5%;
+    height: 50px;
+    position: relative;
+}
+.input_line .movie{
+    width: 100%;
+    height: 25px;
+    border: 0;
+    border-bottom: 2px solid #305ee8;
+    font-size: 17px;
+}
+
+.input_line label{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 17px;
+}
+
+.active~label{
+    top: -15px;
+    font-size: 10px;
+}
+
+#bt{
+    width: 90%;
+    margin: 10px 5%;
+    height: 40px;
+    background-color: white;
+    border: 3px solid mediumaquamarine;
+    border-radius: 10px;
+}
