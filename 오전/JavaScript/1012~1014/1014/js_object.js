@@ -32,7 +32,9 @@ window.onload = function () {
             this.classList.add("active");
         });
         input[i].addEventListener("blur", function () {
-            this.classList.remove("active");
+            if(this.value==''){
+                this.classList.remove("active");
+            }
         });
     }
 }
