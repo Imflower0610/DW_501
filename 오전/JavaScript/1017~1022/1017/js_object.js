@@ -1,7 +1,7 @@
 
 
 // 객체명 tb
-function tb(row, col, wd, hg){
+function tb(row, col, wd, hg) {
     this.row = row;
     this.col = col;
     this.width = wd;
@@ -29,14 +29,19 @@ window.onload = function () {
 // event = keydown(키보드), focus(마우스), click(클릭)
 
 function add_button() {
+    if (bt_check) {// 새버튼 생성 후 값등록 안되었으면 새버틴 생성금지
+        alert("값 먼저 등록해주세요");
+        return;
+    }
+
     var bt = document.createElement("button");
     bt.appendChild(document.createTextNode("세팅" + (++bt_cnt)));
-    bt.setAttribute('data-value','0')
+    bt.setAttribute('data-value', '0')
 
-    bt.addEventListener("click", function(){
-       if(this.dataset.value == 0) // input 값 저장하기 전
+    bt.addEventListener("click", function () {
+        if (this.dataset.value == 0) // input 값 저장하기 전
             value_save(this);
-       else // input 값 저장 이후
+        else // input 값 저장 이후
             table_draw(this);
     });
 
@@ -44,10 +49,21 @@ function add_button() {
     bt_check = true;
 }
 
-function table_draw(obj){
+function table_draw(obj) {
     var draw = document.querySelector("#draw");
-    var data = tb_list[parseInt(obj.dataset.value)-1]
-    draw.innerHTML = data.col + " " + data.row +" " + data.width + "  "+ data.height;
+    var data = tb_list[parseInt(obj.dataset.value) - 1]
+    var table= "";
+
+    table = '<table border="1">';
+    for (var i = 0; i < data.col; i++) { // 행
+        table += '<tr>';
+        for (var j = 0; j < data.row; j++) { // 열
+            table += '<td width =' + data.width + ' height =' + data.height + '> </td>';
+        }
+        table += '</tr>';
+    }
+    table += '</table>';
+    draw.innerHTML= table;
 }
 
 function value_save(obj) {
@@ -60,9 +76,9 @@ function value_save(obj) {
             return;
         }
     }
-    // 행,열,너비,높이 입력하고 세팅 버튼 클릭시 tb객체에 값 저장
-    // 저장 후 tb객체를 배열에 저장
-    var temp = new tb(T_put[0].value,T_put[1].value,T_put[2].value,T_put[3].value);
+// 행,열,너비,높이 입력하고 세팅 버튼 클릭시 tb객체에 값 저장
+// 저장 후 tb객체를 배열에 저장
+    var temp = new tb(T_put[0].value, T_put[1].value, T_put[2].value, T_put[3].value);
     tb_list.push(temp);
 
     obj.dataset.value = bt_cnt;
