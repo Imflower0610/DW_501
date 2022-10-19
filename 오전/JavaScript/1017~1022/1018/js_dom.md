@@ -48,10 +48,10 @@
             -> open(url, window_name, property);
             -> url :페이지 주소
             -> window_name  :
-                    1.window _blank(새창에 열린다)
-                    2. window_parent(부모 프레임에 열린다)
-                    3.window_self(현재 페이지를 대체한다)
-                    4. window_top(로드된 프레임셋 대체)
+                    1. _blank(새창에 열린다)
+                    2. _parent(부모 프레임에 열린다)
+                    3. _self(현재 페이지를 대체한다)
+                    4. _top(로드된 프레임셋 대체)
             -> property : 새 window의 옵션 부여
                         - height 새 창의 높이 지정
                         - width 새 창의 너비 지정 

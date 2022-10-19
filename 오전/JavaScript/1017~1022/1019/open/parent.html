@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+// function open_win(){
+//     window.open("child1.html","_parent","");
+// }
+function open_win(){
+// 가운데 정렬하는 법
+    var Mwidth = screen.width;
+    var Mheight = screen.height;
+    var width = 500, height=700;
+    var left = Mwidth/2 - width/2;
+    var top = Mheight/2 -height/2;
+
+    var url ="child1.html";
+    var window_name =" ";
+    var option = "width = " + width + ", height ="+ height +", left = "+ left+", top ="+top;
+
+    window.open(url,window_name, option);
+}
+</script>
+</head>
+<body>
+    
+<h2>첫번째 윈도우</h2>
+    <button onclick="open_win()">새창열기</button>   
+    <a href="child1.html" target="_blank">이동</a> 
+ 
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+// open에는 세가지를 문자형태로 넣어줘야함, ur, window_name(_blank가 기본값, 화면표시X, 다만 window name에 따라 판별하는 거라 이름이 다르면 다른 걸로 인식), property
+
+function new_window(){
+    window.open("https://www.naver.com/", "_blank","width=500, height=500");    
+}
+// 새 창에서 새 창열기
+</script>
+</head>
+<body>  
+    <h2>자식윈도우2</h2>
+    <button onclick="new_window()">새창열기</button>
+    <a href="https://www.naver.com/" target="_self">이동</a>
+
+</body>
+</html>
