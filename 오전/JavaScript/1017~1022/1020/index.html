@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- index.html문서를 열었을 때 쿠키에 저장되어있는 값으로 배경색과 글씨크기 적용 여부 보기위해 index.html에 <p>테스트</p> 작성 -->
+    <p>테스트</p>
+</body>
+</html>
+<script>
+    var bg = getCookie("bg");
+    var size = getCookie("fontSize");
+    document.bgColor = bg;
+    document.body.style.fontSize=size+"px";
+
+    function getCookie(name){
+        name = name+"=";
+    let decode_cook = decodeURIComponent(document.cookie);
+    let temp = decode_cook.split(";");
+    for(let i =0; i<temp.length; i++){
+        let c = temp[i];
+        while(c.charAt(0) ==' '){ // c라는 문자배열의 첫번째가 " "일때,
+            c = c.substring(1); // c라는 문자배열에 있는 1번째 부터 문자들을 추출하겠다.
+        }
+
+        if(c.indexOf(name)==0){
+            return c.substring(name.length, c.length);
+        }
+    }
+}
+getCookie();
+</script>
