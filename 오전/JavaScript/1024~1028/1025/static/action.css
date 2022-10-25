@@ -1,0 +1,54 @@
+#wrap{
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+
+}
+
+#main-section{
+    order : 1;
+    width : 100%;
+    background-color : #183786; 
+}
+
+.page-title{
+    display : flex;
+    flex-direction : column;
+    position : relative;
+    width : 90%;
+    padding : 5% 5%;
+    max-width : 1000px;
+    margin : 0 auto;
+}
+.h1-txt{
+    font-size : 2.1rem;
+    margin : 0.8rem 0.6rem;
+}
+.h2-txt{
+    font-size : 1.6rem;
+    margin : 0.6rem 0.3rem;
+}
+.h3-txt{
+    font-size : 1.3rem;
+    margin : 0.5rem 0;
+}
+
+/* 쓸 스타일을 만들어 놓고 그때 그때 적용할 수 있도록 해야한다. */
+.txt-white{
+    color : white;
+}
+
+.txt-pink{
+    color : pink;
+    font-weight : 800;
+}
+
+/* 태블릿 */
+@media all and (min-width : 780px){
+    html{font-size: 20px;}
+
+}
+/* PC */
+@media all and (min-width : 960px){
+    html{font-size : 24px;}
+}
