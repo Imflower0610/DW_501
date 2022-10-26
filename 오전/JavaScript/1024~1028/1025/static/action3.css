@@ -1,0 +1,134 @@
+body,
+div {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#wrap {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+#flex1 {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  border: 5px solid #ffffff;
+}
+#flex1 div {
+  width: 100%;
+}
+#flex1 div:nth-child(1) {
+  background-color: red;
+}
+#flex1 div:nth-child(2) {
+  background-color: orange;
+}
+#flex1 div:nth-child(3) {
+  background-color: pink;
+}
+/* ============ flex2 ============= */
+#flex2 {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  border: 5px solid #ffffff;
+}
+#flex2 div {
+  width: 33.33%;
+  height: 50px;
+}
+#flex2 div:nth-child(1) {
+  background-color: red;
+}
+#flex2 div:nth-child(2) {
+  background-color: orange;
+}
+#flex2 div:nth-child(3) {
+  background-color: pink;
+}
+/* flex3 */
+#flex3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  border: 5px solid #ffffff;
+}
+#flex3 div {
+  width: 100%;
+}
+#flex3 div:nth-child(1) {
+  background-color: red;
+}
+#flex3 div:nth-child(2) {
+  background-color: orange;
+}
+#flex3 div:nth-child(3) {
+  background-color: pink;
+}
+
+/* flex4 */
+#flex4 {
+  display: flex;
+  flex-flow: row wrap-reverse;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  border: 5px solid #ffffff;
+}
+#flex4 div {
+  width: 100%;
+  height: 50px;
+}
+#flex4 div:nth-child(1) {
+  background-color: red;
+}
+#flex4 div:nth-child(2) {
+  background-color: orange;
+}
+#flex4 div:nth-child(3) {
+  background-color: pink;
+}
+.box {
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  padding: 0%;
+  margin: 0 -1%;
+}
+.box1 {
+  background-color: rgb(187, 74, 74);
+}
+.box2 {
+  background-color: rgb(230, 214, 78);
+}
+.box3 {
+  background-color: rgb(79, 134, 34);
+}
+.box4 {
+  background-color: rgb(32, 46, 110);
+}
+.box5 {
+  background-color: rgb(204, 50, 76);
+}
+
+@media all and (min-width: 768px) {
+  .box {
+    width: 50%;
+  }
+  .box5 {
+    width: 100%;
+  }
+}
+@media all and (min-width: 1024px) {
+  .box {
+    width: 20%;
+  }
+}

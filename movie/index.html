@@ -21,13 +21,23 @@
       <option value="episode">episode</option>
     </select>
     <button onclick="doSearch()">영화 검색</button>
+
+    <h3 id="movieTitle"></h3>
+    <p>개봉년도 : <span id="year"></span></p>
+    <p>영화 고유번호(PK) : <span id="movieId"></span></p>
+    <p>
+      영화 포스터 : <span id="poster"><br /><img src="" /></span>
+    </p>
   </body>
+
+  <!-- Jquary CDN download -->
   <script
     src="https://code.jquery.com/jquery-3.6.1.js"
     integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
     crossorigin="anonymous"
   ></script>
 
+  <!-- js 입력문 -->
   <script>
     //바닐라 스크립트로input value 출력하기
     var a = document.getElementById('name').value;
@@ -63,6 +73,12 @@
         dataType: 'json',
         success: function (response) {
           console.log(response);
+          var movieTitle = response.Search[0].Title;
+          $('#movieTitle').append(movieTitle); // 영화제목
+          $('#year').append(response.Search[0].Year); //개봉년도
+          $('#movieId').append(response.Search[0].imdbID); //영화고유번호
+          var html = '<img src="' + response.Search[0].Poster + '">';
+          $('#poster').append(html);
         },
       });
     }
