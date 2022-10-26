@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //json(java script ovjexct notation) 배워보기
+      var json = {
+        이름: '홍길동',
+        나이: 30,
+      };
+      /*
+            * Json
+              : Json은 Key와 Value로 구성
+              Key : 이름, 나이
+              Value : 홍길동, 30
+              Key는 데이터베이스에 PK처럼 중복 될 수 없다.
+              Value는 중복가능
+             */
+
+      console.log(json.이름);
+      console.log(json.나이);
+
+      var data = {
+        name: '홍길동',
+        money: 400,
+        bank: '카카오뱅크',
+      };
+      //문제1 bank, money출력
+      console.log(data.bank);
+      console.log(data.money);
+
+      /* json value에 오는 데이터 타입
+           : int, double, string, boolean, array, json
+           * json도 데이터 타입!
+      */
+      var data2 = {
+        이름: '신짱구',
+        나이: 20,
+        취미: ['등산', '게임', '독서', '헬스'],
+        결혼여부: false,
+        키: 182.5,
+        가족: {
+          아빠이름: '신영만',
+          엄마이름: '봉미선',
+        },
+      };
+      // 문제2. 짱구의 결혼여부와 키를 출력하시오.
+      console.log(data2.결혼여부);
+      console.log(data2.키);
+      // 문제3. 짱구의 취미를 모두 출력하시오.
+      console.log(data2.취미[0]);
+      //   for문을 이용해서 json value가 배열인 값 조회하기
+      for (var i = 0; i < data2.취미.length; i++) {
+        console.log(data2.취미[i]);
+      }
+      // 문제4. 짱구의 가족 중 아빠 이름을 출력하시오.
+      console.log(data2.가족.아빠이름);
+
+      var data3 = {
+        name: '보노보노',
+        money: [10, 50, 80, 90],
+      };
+      //   문제5.보노보노가 가지고 있는 돈을 모두 더한 값은?
+      var sum = 0;
+      for (var i = 0; i < data3.money.length; i++) {
+        sum += data3.money[i];
+      }
+      console.log(sum);
+
+      /*
+    name : 영화제목
+    rank : 관객 수 순위
+    createdAt : 개봉 날짜
+    salesRevenue : 판매액
+    attendance : 관객수
+*/
+      const movies = [
+        {
+          name: '명량',
+          rank: 1,
+          createdAt: '2014-07-30',
+          salesRevenue: 135748398910,
+          attendance: 17613682,
+        },
+        {
+          name: '극한직업',
+          rank: 2,
+          createdAt: '2019-01-23',
+          salesRevenue: 139647979516,
+          attendance: 16264944,
+        },
+        {
+          name: '신과함께-죄와 벌',
+          rank: 3,
+          createdAt: '2014-07-30',
+          salesRevenue: 135748398910,
+          attendance: 17613682,
+        },
+        {
+          name: '국제시장',
+          rank: 4,
+          createdAt: '2014-07-30',
+          salesRevenue: 110913469630,
+          attendance: 14257115,
+        },
+        {
+          name: '어벤져스: 엔드게임',
+          rank: 5,
+          createdAt: '2019-04-24',
+          salesRevenue: 122182694160,
+          attendance: 13934592,
+        },
+      ];
+      /*
+    문제 1번.
+        모든 영화 이름, 개봉날짜, 순위 출력하시오.    
+    문제 2번.
+        영화 명량과 어벤져스의 판매액 합산을 구하시오.
+    문제 3번.
+        1위 영화부터 5위 영화 판매액 평균을 구하시오.
+*/
+      var sell = 0;
+      var avg = 0;
+      for (var i = 0; i < movies.length; i++) {
+        console.log(movies[i].name, movies[i].createdAt, movies[i].rank);
+        if (
+          movies[i].name == '명량' ||
+          movies[i].name == '어벤져스: 엔드게임'
+        ) {
+          sell += movies[i].salesRevenue;
+        }
+        avg += movies[i].salesRevenue;
+      }
+      console.log(sell);
+      avg = avg / movies.length;
+      console.log(avg);
+    </script>
+  </head>
+  <body></body>
+</html>
