@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="action.css">
-</head>
-<body>
+    <link rel="stylesheet" href="action.css" />
+    <link rel="stylesheet" href="init.css">
+  </head>
+  <body>
+
+
+
     <div id="wrap">
-        <section id="main-section">
-            <div class="page-title">
-                <div class="title1">
-                    <h3 class="h3-txt txt-white">
-                    2022 할로윈데이는 파리바게트에서 만나요
-                    </h3>
-                </div>
-                <div class="title2">
-                    <h3 class="h3-txt txt-white">
-                    파리바게트에서 선보이는 돌에 구운 베이글
-                    </h3>
-                </div>
+        <section id="multi-section">
+            <div>
+                <video controls>
+                    <source src="bread_video.mp4" type="video/mp4"></source>
+                </video>
+                <img src="bread1.jpg">
+                <img src="bread2.jpg">
             </div>
         </section>
+      <section id="image-section">
+        <div class="image_wrap">
+          <div class="image-box imgb1">
+            (가변길이적용할 길이값/적용할 박스를 감싸고 있는 박스의
+            가로너비)*100
+          </div>
+          <div class="image-box imgb2">
+            (640/1000)*100 <br />
+            1. 최대 너비값 정하기 <br />
+            2. 요소별 너비값 px로 길이 값 구하기 <br />
+            3. 가변 길이값 구하는 식으로 % 변환하여 작성<br />
+            * 가변 폰트 단위 : <br />
+            1. vw - 브라우저의 너비 기준 <br />
+            2. vh - 브라우저의 높이 기준 <br />
+            3. vmin - 브라우저의 너비, 높이 중 작은 값 기준 <br />
+            4. vmax - 브라우저의 너비, 높이 중 큰 값 기준
+          </div>
+        </div>
+      </section>
+      <section id="main-section">
+        <div class="page-title">
+          <div class="title1">
+            <h3 class="h3-txt txt-white">
+              2022 할로윈데이는 파리바게트에서 만나요
+            </h3>
+          </div>
+          <div class="title2">
+            <h3 class="h3-txt txt-white">
+              파리바게트에서 선보이는 돌에 구운 베이글
+            </h3>
+          </div>
+        </div>
+      </section>
     </div>
-</body>
+  </body>
 </html>

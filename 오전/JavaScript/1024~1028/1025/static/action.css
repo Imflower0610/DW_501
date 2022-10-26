@@ -1,54 +1,95 @@
-#wrap{
-    width : 100%;
-    display : flex;
-    flex-direction : column;
-
+#wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-#main-section{
-    order : 1;
-    width : 100%;
-    background-color : #183786; 
+#main-section {
+  order: 1;
+  width: 100%;
+  background-color: #183786;
 }
 
-.page-title{
-    display : flex;
-    flex-direction : column;
-    position : relative;
-    width : 90%;
-    padding : 5% 5%;
-    max-width : 1000px;
-    margin : 0 auto;
+.page-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: calc(100% - 100px);
+  /*padding 값이 50px면 50*2=100이니까 100% - 100px 해야된다.*/
+  padding: 5% 50px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-.h1-txt{
-    font-size : 2.1rem;
-    margin : 0.8rem 0.6rem;
+#image-section {
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  display: flex;
 }
-.h2-txt{
-    font-size : 1.6rem;
-    margin : 0.6rem 0.3rem;
+.image_wrap {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
 }
-.h3-txt{
-    font-size : 1.3rem;
-    margin : 0.5rem 0;
+.imgb1 {
+  width: 36%;
+  background-color: pink;
+  font-size: 5vw;
+}
+.imgb2 {
+  width: 64%;
+  background-color: #478899;
+  font-size: 3vh;
+}
+.image-box {
+  height: 350px;
+}
+#multi-section > div {
+  width: 70%;
+  display: inline-block;
+  margin: 0 15%;
+}
+#multi-section img,
+#multi-section video {
+  width: 100%;
+  max-width: 100%;
+}
+
+.h1-txt {
+  font-size: 2.1rem;
+  margin: 0.8rem 0.6rem;
+}
+.h2-txt {
+  font-size: 1.6rem;
+  margin: 0.6rem 0.3rem;
+}
+.h3-txt {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
 }
 
 /* 쓸 스타일을 만들어 놓고 그때 그때 적용할 수 있도록 해야한다. */
-.txt-white{
-    color : white;
+.txt-white {
+  color: white;
 }
 
-.txt-pink{
-    color : pink;
-    font-weight : 800;
+.txt-pink {
+  color: pink;
+  font-weight: 800;
 }
 
 /* 태블릿 */
-@media all and (min-width : 780px){
-    html{font-size: 20px;}
-
+@media all and (min-width: 780px) {
+  html {
+    font-size: 20px;
+  }
 }
 /* PC */
-@media all and (min-width : 960px){
-    html{font-size : 24px;}
+@media all and (min-width: 960px) {
+  html {
+    font-size: 24px;
+  }
 }
+
+/* 오늘 배운거 적용 안되면 비주얼코드 php설정 검색하기 */
