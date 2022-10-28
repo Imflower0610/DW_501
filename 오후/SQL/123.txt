@@ -1,0 +1,8 @@
+영화코드 검색해서 상세정보 알고싶음
+api주소 작성하기
+영화상세정보조희
+http://www.omdbapi.com/?apiKey=ccf9d5fa&i=tt0433400&
+2018년도에 개봉한 영화 ㅏ중 love가 들어간 api 조회
+http://www.omdbapi.com/?apiKey=ccf9d5fa&s=love&type=movie&y=2018
+2015년도에 love가 들어간 에피소드물 중 3페이지결과만 보고싶은때
+http://www.omdbapi.com/?apiKey=ccf9d5fa&s=love&type=episode&year=2015&page=3
