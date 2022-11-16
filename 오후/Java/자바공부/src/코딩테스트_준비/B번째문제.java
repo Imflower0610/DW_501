@@ -1,6 +1,6 @@
 package 코딩테스트_준비;
 
-public class 두번째문제 {
+public class B번째문제 {
 
 	public static void main(String[] args) {
 		 int n = 64; //양꼬치
@@ -16,5 +16,4 @@ public class 두번째문제 {
 		 result = n*양꼬치+k*음료수-제외가격;
 		 System.out.println(result);
 	}
-
 }

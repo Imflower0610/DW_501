@@ -1,8 +1,7 @@
 package 코딩테스트_준비;
 
-public class 첫번째문제 {
+public class A번째문제 {
 
-    
 	public static void main(String[] args) {
 		int money = 15000; //가지고 있는 돈
 	    int 잔수 = 0;
@@ -13,5 +12,4 @@ public class 첫번째문제 {
 	     System.out.println("잔 수 : " + 잔수 + ", 남은 돈 : " + 남은돈);
 
 	}
-
 }

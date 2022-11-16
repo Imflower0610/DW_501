@@ -1,6 +1,6 @@
 package 코딩테스트_준비;
 
-public class 문자반복출력하기 {
+public class D번째문제_문자반복 {
 
 	public static void main(String[] args) {
 		//머쓱이는 학교에서 키 순으로 줄을 설 때 몇번째로 서야 하는지 궁금해졌습니다. 

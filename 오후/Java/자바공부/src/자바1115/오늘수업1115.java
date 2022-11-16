@@ -1,4 +1,4 @@
-package 코딩테스트_준비;
+package 자바1115;
 
 //java.util 패키지 안에 들어있는 ArrayList라는 클래스를 사용하려면 import 해야함
 import java.util.ArrayList;
