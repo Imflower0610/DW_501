@@ -26,8 +26,31 @@ public class main_house {
 		
 		air[1].buy();
 		
+		tv t1 = new tv();
+		t1.brand="";
+		t1.price=11;
+		t1.inch=20;
 		
+		house_item t2 = new tv();
+		t2.brand="";
+		t2.price=22;
+//		t2.inch=20;-> 자식은 부모가 가진거 사용 가능하지만 부모는 자식이 가진거 사용불가
 		
+		tv t3 =(tv)t2;
+		t3.inch=20;
+		
+		//tv t4 = new house item;
+		
+	// 클래스 구별하는 연산자
+		if(t3 instanceof aircon) {
+			System.out.println("에어컨 객체이다.");
+		}
+		if(t3 instanceof tv) {
+			System.out.println("tv 객체이다.");
+		}
+		
+		int a = (int)3.14;
+		float f = 3.14f;
 		
 		
 /*
