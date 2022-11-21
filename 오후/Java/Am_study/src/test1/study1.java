@@ -39,9 +39,9 @@ public class study1 {
 			System.out.println("총점은 "+ sum + ", 평균은 " + avg);
 			
 			/* 배열
-			 * 	const arr =[], const arr2= new Array();
+			 * const arr =[], const arr2= new Array();
 			 * 자바에서 1차원 배열 생성하기
-			 * 	타입[] 배열이름 = new 타입[배열크기];
+			 * 타입[] 배열이름 = new 타입[배열크기];
 			 */
 			int[] score = new int[5];
 			score[0]=10;

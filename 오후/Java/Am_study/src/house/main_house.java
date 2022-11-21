@@ -42,9 +42,9 @@ public class main_house {
 		//tv t4 = new house item;
 		
 	// 클래스 구별하는 연산자
-		if(t3 instanceof aircon) {
+	/*	if(t3 instanceof aircon) {
 			System.out.println("에어컨 객체이다.");
-		}
+		}*/
 		if(t3 instanceof tv) {
 			System.out.println("tv 객체이다.");
 		}
