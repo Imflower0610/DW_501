@@ -1,0 +1,15 @@
+	MVC
+	   - Model : 데이터
+	   - Vien : 웹페이지
+	   - Control : 클라이언트 요청(사용자의 선택에 따라 메서드 작용할 수 있도록 Control)
+
+	과정
+	1. Control
+	메뉴에서 사용자가 선택
+	2. BO
+	BO에서 사용자 컨트롤에 따라 데이터를 확인, 가공
+	3. DAO
+	DAO는 데이터를 저장하는 것, 꺼내오는 것만 함
+	4. VO : Value Object
+	데이터가 저장되기 위한 클래스
+	VO 클래스에는 필드변수와 getter, setter만 온다.

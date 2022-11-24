@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import cafe.VO.member;
+import cafe.main.cafe_main;
+
 public class member_DAO {
 	// java로 데이터베이스 저장하는 방법
 	// 어떤 데이터베이스를 사용하는가 먼저 정해야됨(우리는 My SQL)
@@ -94,6 +97,41 @@ public class member_DAO {
 
 		// 드라이버 로드라는 작업은 해당 데이터베이스와 연결해주는 클래스르르 컴퓨터 메모리에 로드(적재, 올리다.) 해주는 작업이다.
 	}
+	public boolean id_check(String id, String email) {
+		String sql = "SELECT * FROM member where id=? or email=?";
+		//member 테이블에서 입력받은 id 또는 email이 있나?
+		try {
+			pt = conn.prepareStatement(sql);
+			pt.setString(1, id);
+			pt.setString(2, email);
+			rs = pt.executeQuery();
+			if(rs.next()) {// id 또는 email이 있다면, rs.next()에는 값이 있다 => 중복이다.
+				return true;
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public boolean login(String id, String pw) {
+		String sql ="SELECT * FROM member WHERE id=? and tel=?";
+		//member 테이블에서 id와 tel 일치하는가 확인
+		try {
+			pt = conn.prepareStatement(sql);
+			pt.setString(1, id);
+			pt.setString(2, pw);
+			rs = pt.executeQuery();//쿼리 실행해봤을때
+			if(rs.next()) {// id와 tel이 일치하는 정보라면 로그인 성공ㅇ
+				cafe_main.user = new member(rs.getString(1),
+						rs.getString(2), rs.getString(3),rs.getString(4));
+				return false;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return true;//아이디 비번잉 잘못되어서 로그인 실패
+	}
+
 	
 }
 /*

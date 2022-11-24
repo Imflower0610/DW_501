@@ -9,4 +9,5 @@
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="cafe.main.cafe_main"/>
 </qualifiedTypeNameHistroy>
