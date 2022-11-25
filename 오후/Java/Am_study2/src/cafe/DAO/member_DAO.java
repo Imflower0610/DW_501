@@ -10,18 +10,9 @@ import java.sql.Statement;
 import cafe.VO.member;
 import cafe.main.cafe_main;
 
-public class member_DAO {
-	// java로 데이터베이스 저장하는 방법
-	// 어떤 데이터베이스를 사용하는가 먼저 정해야됨(우리는 My SQL)
-	
-	private Connection conn = null;// 데이터베이스 연결정보를 저장
-	private Statement st = null;// sql 질의문을 데이터베이스에 전달
-	private PreparedStatement pt = null;//sql 질의문을 데이터베이스에 전달
-	private ResultSet rs = null;//sql질의문 조회 결과를 저장
-	
+public class member_DAO extends base_DAO {
+
 	public member_DAO(){//기본생성자 메서드
-		DriverLoad();
-		connect();
 		table_check();
 	}
 	public boolean member_insert(String id, String name, String tel, String email) {
@@ -72,31 +63,6 @@ public class member_DAO {
 		}
 	}
 	
-	private void connect() {
-		// DB주소 : dbc:mysql://데이터베이스서버주소:mysql-port/DB명
-		String url="jdbc:mysql://localhost:3306/dw_501";
-		String user ="root";//mysql 아이디
-		String pass = "Wkwmdsk18!";//mysql 비밀번호
-		try {
-			conn = DriverManager.getConnection(url,user,pass);
-		}catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("접속 실패");
-		}
-	}
-	
-	private void DriverLoad() {
-
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");//문자열을 클래스화 해준다.
-		}catch(ClassNotFoundException e) {
-			e.printStackTrace();
-			System.out.println("드라이버 로드 실패");
-		}
-		//Class.forName("cafe.control.order");
-
-		// 드라이버 로드라는 작업은 해당 데이터베이스와 연결해주는 클래스르르 컴퓨터 메모리에 로드(적재, 올리다.) 해주는 작업이다.
-	}
 	public boolean id_check(String id, String email) {
 		String sql = "SELECT * FROM member where id=? or email=?";
 		//member 테이블에서 입력받은 id 또는 email이 있나?
@@ -121,9 +87,9 @@ public class member_DAO {
 			pt.setString(1, id);
 			pt.setString(2, pw);
 			rs = pt.executeQuery();//쿼리 실행해봤을때
-			if(rs.next()) {// id와 tel이 일치하는 정보라면 로그인 성공ㅇ
-				cafe_main.user = new member(rs.getString(1),
-						rs.getString(2), rs.getString(3),rs.getString(4));
+			if(rs.next()) {// id와 tel이 일치하는 정보라면 로그인 성공
+				cafe_main.user = new member(rs.getString(1), rs.getString(2), 
+						rs.getString(3),rs.getString(4), rs.getInt(5));
 				return false;
 			}
 		}catch(SQLException e) {
