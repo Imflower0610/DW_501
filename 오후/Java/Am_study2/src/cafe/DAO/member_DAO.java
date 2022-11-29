@@ -15,14 +15,15 @@ public class member_DAO extends base_DAO {
 	public member_DAO(){//기본생성자 메서드
 		table_check();
 	}
-	public boolean member_insert(String id, String name, String tel, String email) {
-		String sql = "insert into member (id,name,tel,email) values (?,?,?,?)";
+	public boolean member_insert(String id, String name, String tel, String email, String allergy) {
+		String sql = "insert into member (id,name,tel,email,allergy) values (?,?,?,?,?)";
 		try {
 			pt = conn.prepareStatement(sql);
 			pt.setString(1, id);
 			pt.setString(2, name);
 			pt.setString(3, tel);
 			pt.setString(4, email);
+			pt.setString(5, allergy);
 			pt.executeUpdate();
 			return true;
 		}catch(SQLException e){
@@ -34,7 +35,7 @@ public class member_DAO extends base_DAO {
 	private void tablemake() {
 		String sql="create table member(member_seq int auto_increment primary key , "
 				+ "id varchar(50) not null, name varchar(20) not null, "
-				+ "tel varchar(20) not null, email varchar(255) not null)";
+				+ "tel varchar(20) not null, email varchar(255) not null, allergy varchar(255))";
 		try {
 			st = conn.createStatement();
 			int result = st.executeUpdate(sql);
@@ -88,8 +89,8 @@ public class member_DAO extends base_DAO {
 			pt.setString(2, pw);
 			rs = pt.executeQuery();//쿼리 실행해봤을때
 			if(rs.next()) {// id와 tel이 일치하는 정보라면 로그인 성공
-				cafe_main.user = new member(rs.getString(1), rs.getString(2), 
-						rs.getString(3),rs.getString(4), rs.getInt(5));
+				cafe_main.user = new member(rs.getString(2), 
+						rs.getString(3),rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7));
 				return false;
 			}
 		}catch(SQLException e) {

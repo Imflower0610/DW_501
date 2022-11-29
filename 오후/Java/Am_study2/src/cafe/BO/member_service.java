@@ -12,13 +12,13 @@ public class member_service {
 			return false;//로그인 성공. 아이디 비번 일치한 경우
 	}
 	
-	public boolean sign_member(String id, String name, String tel, String email) {
+	public boolean sign_member(String id, String name, String tel, String email, String allergy) {
 		boolean check = mdao.id_check(id, email);
 		if(check)// 중복이라면
 			{System.out.println("아이디 또는 이메일이 중복입니다.");
 			return false;
 		}else//중복이 아니라면
-			mdao.member_insert(id, name, tel, email);
+			mdao.member_insert(id, name, tel, email, allergy);
 		System.out.println("회원가입 성공");
 		//id_check 메서드를 통해 아이디와 이메일의 중복여부 확인 중복이면 회원가입 안됨	
 		return false;

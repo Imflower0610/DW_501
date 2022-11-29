@@ -1,9 +1,12 @@
 package cafe.control;
 
+import cafe.main.cafe_main;
+
 @FunctionalInterface
 public interface menu_able {
 	
 	public boolean menu_active();
+}
 	
 /* 정의불가
 	* 인스턴스변수 : int num;
@@ -20,7 +23,7 @@ public interface menu_able {
 	 *  클래스메서드 가능
 		static void addd() {}
 */
-}
+
 
 /* 
  * 인터페이스 : 추상클래스의 하나

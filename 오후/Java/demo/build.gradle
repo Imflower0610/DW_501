@@ -18,6 +18,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	 // 롬복
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	//mySQL
+	runtimeOnly 'mysql:mysql-connector-java'
+	//ORM : 내가 작성ㅇ한 SQL 결과를 JAVA로 변환 Mybaties or JPA
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 }
 
 tasks.named('test') {

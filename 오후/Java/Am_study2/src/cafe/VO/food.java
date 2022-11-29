@@ -66,6 +66,8 @@ public class food {
 		this.order_quantity = order_quantity;
 	}
 
+
+
 	
 
 }

@@ -6,17 +6,25 @@ public class member {
 	private String tel;
 	private String email;
 	private int money;
+	private String allergy;
 	
 	public member() {}
-	public member(String id,String name,String tel,String email,int money) {
+	public member(String id,String name,String tel,String email,int money,String allergy) {
 		this.id=id;
 		this.name=name;
 		this.tel=tel;
 		this.email=email;
 		this.money= money;
+		this.allergy =allergy;
 	}
 	
 	
+	public String getAllergy() {
+		return allergy;
+	}
+	public void setAllergy(String allergy) {
+		this.allergy = allergy;
+	}
 	public int getMoney() {
 		return money;
 	}
