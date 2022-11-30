@@ -7,12 +7,13 @@
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="cafe.VO.food"/>
     <fullyQualifiedTypeName name="cafe.BO.food_service"/>
     <fullyQualifiedTypeName name="cafe.VO.member"/>
     <fullyQualifiedTypeName name="cafe.main.cafe_main"/>
     <fullyQualifiedTypeName name="cafe.control.my_info"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="VO.venture"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
 </qualifiedTypeNameHistroy>
