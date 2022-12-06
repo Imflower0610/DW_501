@@ -1,0 +1,169 @@
+오전 수업
+1. 파이썬 깔기
+2. 파이썬 내용만들기 - 기초연습
+x=9
+print("output : " +str(x))
+print("output : {0}".format(x))
+
+a=3.14
+print("float : {0}".format(a))
+print("float : {0:.1f}".format(a)) # 소수점 1자리 출력 
+
+print(type(a))
+
+name="김민정"
+print("이름 : {0:s}".format(name))
+print("이름 : "+name)
+memo="을 이정수가 때렸다."
+
+result = name + memo
+print(result)
+res_len = len(result)
+print(res_len)
+
+temp1=result.split()
+print(temp1)
+temp2 = result.split(" ",1) #,뒤에는 몇번 나눌 건지 횟수를 나타냄
+print(temp2)
+
+print(" {0}".format(",".join(temp1)))
+#join은 문자열배열을 합치기 "%".join(배열) 하면 각배열의 요소 사이사이에 %가 붙은상태로 합쳐진다.
+"""이것도 주석으로 사용하기도 함"""
+
+num = int(input("숫자를 입력하세요 : ")) #input은 입력함수이다. 결과는 문자열로 반환한다. => int로 감싸줘서 정수로 반환되게 한다.
+print(type(num))
+
+# 정수타입 변환 int()
+# 실수타입 변환 float()
+# 문자열 타입 변환 str()
+
+"""문제1. 국어, 수학, 영어 세과목 점수 받아서 평균 구하여 출력하기"""
+kor = int(input("국어점수를 입력하세요 : "))
+mat = int(input("수학점수를 입력하세요 : "))
+eng = int(input("영어점수를 입력하세요 : "))
+total =kor+mat+eng
+print("평균점수 : " + str(total/3)) # 문자랑 숫자 같이 나와야하니까
+
+
+
+오후수업
+1. 패키지 만들기
+com.example.demo.config
+
+2. 그 안에 클래스 만들기
+WebSecurityConfig
+
+3. 그 안에 내용만들기
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+// @Configuration : 설정과 관련된 어노테이션
+// @EnableWebSecurity : Spring에서 매우 자주 사용하는 시큐리티 어노테이션
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	/**
+	 * @Since : 2022. 12. 6.
+	 * @Author : Imflower
+	 * @Return : PasswordEncoder
+	 * @Comment : 특정 변수 암호화
+	 */
+	@Bean
+	public PasswordEncoder getPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception{
+		http.csrf().disable()
+		.formLogin().disable();
+	}
+}
+
+1. page controller /users부분 수정
+@GetMapping("/users")
+public String calluserspage(HttpServletRequest req, ModelMap map) {
+	//ModelMap : Html에 데이터르르 전달함 (html에 데이터를 전달하는 방법은 크게 2가지)
+	//1. AJAX를 이용한 데이터 처리
+	//2. ModelMap을 활용한 데이터 처리
+	//실무에서는 1번과 2번을 번갈아가면서 사용
+	//2번은 사용하지 않는 곳도 있기 때문에 우리는 1번만 사용
+	HttpSession session = req.getSession();
+	String name = (String) session.getAttribute("name");
+	System.out.println("name===> " +name);
+	map.addAttribute("name", name);//
+		
+	return "users";
+}
+
+2. apicontroller에서 로그인 부분 수정
+@PostMapping("api/v1/login")
+public UsersVO callUsersLogin(@RequestBody UsersVO vo, HttpServletRequest req){
+	
+	String password = vo.getPw();//html에 패스워드
+		
+	vo = empMapper.selectUserPassword(vo);
+	if(vo == null) {//아이디가 틀리면 null return
+		vo = new UsersVO();
+		vo.setUser(false);
+	}
+	String DBpassword = vo.getPw();//데이터베이스에 저장된 내 비밀번호 불러옴
+	boolean isUser = passwordEncoder.matches(password, DBpassword);
+	if(!isUser) {
+		vo.setUser(false);
+		return vo;
+	} 
+	HttpSession session = req.getSession();//세션 불러오기
+	//세션은 key와 value로 구성(hashMap과 동일)
+	//세션은 서버가 종료될 때까지 데이터가 유지됨(디폴트로 가지고 있는 시간은 30분!)
+	session.setAttribute("name", vo.getName());//세션에 사용자 이름 저장
+		
+	vo.setUser(true);
+	return vo;
+		
+	
+}
+
+3. login3.html에 ajax 부분만 수정
+$.ajax({
+	url : '/api/v1/users',
+	contentType : 'application/json',//서버에 json타입으로 보낼 예정(요청)
+	type : 'POST',
+	data : JSON.stringify(jsonData),
+	dataType : 'json',
+	success : function(response) {
+		console.log(response);
+		alert("회원가입 축하한다;; 💢")
+		location.reload();//강제새로고침
+	}
+});
+4. emp mapper에 추가
+/**
+ * @Since : 2022. 12. 6.
+ * @Author : Imflower
+ * @Return : UsersVO
+ * @Comment : 회원인지 아닌지 체크(암호화추가됨)
+ */
+UsersVO selectUserPassword(UsersVO vo);
+
+5.sql.xml에 추가? 수정?
+<select id="selectUserPassword" resultType="com.example.demo.vo.UsersVO">
+	SELECT 
+		id, 
+		pw,
+		name
+	FROM users
+	WHERE id = #{id}
+</select>
+6. UsersVO에 변수추가
+private boolean isUser;
+
+7. users.html에 <h3> 밑에 추가
+<h4 th:text = "${name} + '님 환영합니다!'"> </h4>
+	
