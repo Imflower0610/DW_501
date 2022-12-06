@@ -34,12 +34,13 @@
 		DELETE FROM emp
 		WHERE empno = #{empno}
 	</delete>
-	
+
 	<update id="updateEmp">
-	UPDATE emp SET sal = #{sal},job = #{job} WHERE empno = #{empno}
-	
+		UPDATE emp SET sal = #{sal},job = #{job} WHERE empno
+		= #{empno}
+
 	</update>
-	
+
 	<insert id="insertDept">
 		INSERT INTO dept
 		(
@@ -59,5 +60,57 @@
 		DELETE FROM dept
 		WHERE deptno = #{deptno}
 	</delete>
+	<update id="updateDept">
+		UPDATE dept
+		SET dname = #{dname}, loc = #{loc}
+		WHERE
+		deptno = #{deptno}
+	</update>
+
+	<!-- 회원가입 SQL 작성 -->
+	<insert id="insertUsers">
+
+		INSERT INTO users
+		(id, pw, name)
+		VALUES
+		(#{id}, #{pw},
+		#{name})
+
+	</insert>
+
+	<select id="selectUsers"
+		resultType="com.example.demo.vo.UsersVO">
+		select * from users
+	</select>
 	
+	<delete id="usersDelete">
+		DELETE FROM users
+		WHERE id = #{id}
+	</delete>
+	
+	<update id="usersUpdate">
+		UPDATE users
+		SET pw = #{pw}, name = #{name}
+		WHERE
+		id =
+		#{id}
+	</update>
+	
+	<!-- count는 int형으로 리턴 -->
+	<select id="selectUsersFindById" resultType="integer">
+		SELECT count(*) FROM users
+		WHERE id = #{id}
+		<!-- pw에 null이 들어가있으면 실행하지 말아라 -->
+		<if test="pw != null ">	<!-- 동적쿼리 이부분 추가 -->
+			AND pw = #{pw}
+		</if>
+	</select>
+	<select id="selectUserPassword" resultType="com.example.demo.vo.UsersVO">
+	SELECT 
+		id, 
+		pw,
+		name
+	FROM users
+	WHERE id = #{id}
+	</select>
 </mapper>

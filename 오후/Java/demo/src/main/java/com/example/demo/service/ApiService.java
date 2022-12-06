@@ -3,13 +3,19 @@ package com.example.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
+import com.example.demo.mapper.EmpMapper;
 import com.example.demo.vo.Movie;
+import com.example.demo.vo.UsersVO;
 
 @Service
 public class ApiService {
+	
+	@Autowired
+	EmpMapper empMapper;
+	
 //업무분담시 파트 나눌때 유용
 //window -> preference -> code templates -> edit template -> 내용수정 -> 설정완료후 메소드이름 클릭하고 "Alt + shift +j"누르기
 	/**
@@ -45,5 +51,19 @@ public class ApiService {
 	    
 	    return list;
 		
+	}
+
+	
+	
+	public boolean checkUser(String id) {
+		
+		UsersVO vo = new UsersVO();
+		vo.setId(id);
+		
+		int rows = empMapper.selectUsersFindById(vo);
+		if(rows > 0) {
+			return true;
+		}
+		return false;
 	}
 }

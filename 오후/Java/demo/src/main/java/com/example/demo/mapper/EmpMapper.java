@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.vo.DeptVO;
 import com.example.demo.vo.EmpVO;
+import com.example.demo.vo.UsersVO;
 
 @Mapper
 public interface EmpMapper {
@@ -73,7 +74,63 @@ public interface EmpMapper {
 	 * @Comment : 부서삭제
 	 */
 	int deleteDept(int deptno);
+	
+	/**
+	 * @Since : 2022. 12. 1.
+	 * @Author : Imflower
+	 * @Return : int
+	 * @Comment : 부서수정
+	 */
+	int updateDept(DeptVO devo);
 
+	/**
+	 * @Since : 2022. 12. 2.
+	 * @Author : Imflower
+	 * @Return : int
+	 * @Comment : 회원가입
+	 */
+	int insertUsers(UsersVO vo);
+	
+	/**
+	 * @Since : 2022. 12. 2.
+	 * @Author : Imflower
+	 * @Return : int
+	 * @Comment : 회원인지 아닌지 체크
+	 */
+	int selectUsersFindById(UsersVO vo);
+	
+	/**
+	 * @Since : 2022. 11. 29.
+	 * @Author : Imflower
+	 * @Return : List<DeptVO>
+	 * @Comment : 회원테이블 조회
+	 */
+	List<UsersVO>selectUsers();
+	
+	/**
+	 * @Since : 2022. 12. 1.
+	 * @Author : Imflower
+	 * @Return : int
+	 * @Comment : 유저삭제
+	 */
+	int usersDelete(String id);
+	
+	/**
+	 * @Since : 2022. 12. 1.
+	 * @Author : Imflower
+	 * @Return : int
+	 * @Comment : 유저수정
+	 */
+	int usersUpdate(UsersVO uvo);
+	
+
+	/**
+	 * @Since : 2022. 12. 6.
+	 * @Author : Imflower
+	 * @Return : UsersVO
+	 * @Comment : 회원인지 아닌지 체크(암호화추가됨)
+	 */
+	UsersVO selectUserPassword(UsersVO vo);
 }
 
 

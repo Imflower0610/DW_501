@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -24,6 +26,7 @@ import com.example.demo.vo.EmpVO;
 import com.example.demo.vo.Login;
 import com.example.demo.vo.Login2;
 import com.example.demo.vo.Movie;
+import com.example.demo.vo.UsersVO;
 
 /*
 	 * RestController와 Controller 차이점
@@ -50,6 +53,9 @@ public class ApiControlller {
 
 	@Autowired
 	EmpMapper empMapper;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	@GetMapping("/api/v1/sample")
 	public List<String> callData() {
@@ -179,4 +185,76 @@ public class ApiControlller {
 	public int callEmpUpdate(@RequestBody EmpVO emp) {
 		return empMapper.updateEmp(emp);
 	}
+	@PatchMapping("api/v1/dept/")
+	public int callDeptUpdate(@RequestBody DeptVO dept) {
+		return empMapper.updateDept(dept);
+	}
+	//회원가입
+	@PostMapping("api/v1/users")
+	public int callUsersJoin(@RequestBody UsersVO vo){
+		String password = vo.getPw();//html에서 받은 비밀번호를 가져옴
+		password = passwordEncoder.encode(password);//비밀번호 암호화(sha-1)
+		
+		vo.setPw(password);//암호화된 비밀번호 set
+		
+		return empMapper.insertUsers(vo);
+		
+	}
+	
+	//로그인
+	//세션 : 서버에 임시적으로 데이터를 저장함
+	@PostMapping("api/v1/login")
+	public UsersVO callUsersLogin(@RequestBody UsersVO vo, HttpServletRequest req){
+		
+		String password = vo.getPw();//html에 패스워드
+		
+		vo = empMapper.selectUserPassword(vo);
+		if(vo == null) {//아이디가 틀리면 null return
+			vo = new UsersVO();
+			vo.setUser(false);
+		}
+		String DBpassword = vo.getPw();//데이터베이스에 저장된 내 비밀번호 불러옴
+		boolean isUser = passwordEncoder.matches(password, DBpassword);
+		if(!isUser) {
+			vo.setUser(false);
+			return vo;
+		} 
+		HttpSession session = req.getSession();//세션 불러오기
+		//세션은 key와 value로 구성(hashMap과 동일)
+		//세션은 서버가 종료될 때까지 데이터가 유지됨(디폴트로 가지고 있는 시간은 30분!)
+		session.setAttribute("name", vo.getName());//세션에 사용자 이름 저장
+		
+		vo.setUser(true);
+		return vo;
+		
+	
+	}
+
+//데이터 표출
+	@GetMapping("/api/v1/users")
+	public List<UsersVO> callUsers() {
+		return empMapper.selectUsers();
+	}
+	//회원삭제
+	@DeleteMapping("/api/v1/users/{id}")
+	   public int callUsersDelete(@PathVariable String id) {
+		return empMapper.usersDelete(id);
+	   }
+	//회원수정
+	@PatchMapping("/api/v1/users/usersjoin")
+	public int callUsersjoin(@RequestBody UsersVO uvo) {
+		return empMapper.usersUpdate(uvo);
+	}
+	@GetMapping("/api/v1/users/{id}")
+	   public boolean callUser(@PathVariable String id) {
+	      
+	      return apiservice.checkUser(id);
+	   }
+
+//@RestController("/api/v1") 이렇게 전역변수를 지정해서 쓸수 있지만 찾기가 어려워진다.
+//@RestController
+//public 블라블라{
+//final String ROOT_URL = "/api/v1";
+//}
+//이렇게도 쓸수 있지만 찾기 어려워서 패쓰
 }
